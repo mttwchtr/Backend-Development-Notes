@@ -14,6 +14,21 @@
 
 ## Javascript
 
+
+* JavaScript > Patterns
+
+**Callback Pattern**
+> In JavaScript, a callback is a function that is passed as an argument to another function and is invoked with the result when the operation completes. - s1
+>  Callbacks are functions that are invoked to propagate the result of an operation and this is exactly what we need when dealing with asynchronous operations. They do replace the use of the return instruction that always executes synchronously. - s1
+```javascript
+function add(a, b, callback) {
+ callback(a + b);
+}
+add(1, 2, result => console.log('Result: ' + result));
+>> Result: 3
+```
+
+
 * Javascript > ES6
 
 **Const**
@@ -174,6 +189,44 @@ person.greet('Howdy')
 
 * Javascript > Node
 
+* Javascript > Node > Concepts
+
+**Asynchronous vs. Synchronous**
+
+* A synchronous callback
+``` javascript
+function add(a, b, callback) {
+ callback(a + b);
+}
+
+console.log('before');
+add(1, 2, result => console.log('Result: ' + result));
+console.log('after');
+
+>> before
+>> Result: 3
+>> after
+```
+* An asynchronous callback
+``` javascript
+function additionAsync(a, b, callback) {
+ setTimeout(() => callback(a + b), 100);
+}
+console.log('before');
+additionAsync(1, 2, result => console.log('Result: ' + result));
+console.log('after');
+
+>> before
+>> after
+>> Result: 3
+```
+> Since setTimeout() triggers an asynchronous operation, it will not wait for the callback to
+be executed, but instead, it returns immediately, giving the control back to
+additionAsync(), and then back to its caller. This property in Node.js is crucial, as it gives
+control back to the event loop as soon as an asynchronous request is sent, thus allowing a
+new event from the queue to be processed.
+
+
 * Javascript > Node > Features
 
 **Module**
@@ -185,3 +238,31 @@ person.greet('Howdy')
 ** Lexical Scoping **
 > defines how variable names are resolved in nested functions: inner functions contain the scope of parent functions even if the parent function has returned. - https://stackoverflow.com/questions/1047454/what-is-lexical-scope
 
+* JavaScript > Vanilla > Features
+
+**Closures**
+> closure is the combination of a function and the lexical environment within which that function was declared.
+> Closures are useful because they let you associate some data (the lexical environment) with a function that operates on that data. This has obvious parallels to object-oriented programming, where objects allow us to associate some data (the object's properties) with one or more methods. - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+> With closures, we can in fact reference the environment in which a function was created; we can always maintain the context in which the asynchronous operation was requested, no matter when or where its callback is invoked. - s1
+```javascript
+function makeFunc() {
+  var name = 'Mozilla';
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;
+}
+
+var myFunc = makeFunc();
+myFunc();
+>> Mozilla
+```
+
+**setTimeOut**
+Can be used to simulate an asynchronous event
+```javascript
+setTimeout(function(){
+  console.log('I waited'), 1000);
+}
+>> I waited
+```
