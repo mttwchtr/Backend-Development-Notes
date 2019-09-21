@@ -1,27 +1,23 @@
-- Sources cat
-    - First nested list item
-    - Second nested list item
-      - Third Nested
+# Backend Development Notes
 
-
-- Sources
+## Sources
     - s1. Node Design Patterns, 2nd Edition, Mario Casciaro, Luciano Mammino
 
-Sources
-- s1. Node Design Patterns, 2nd Edition, Mario Casciaro, Luciano Mammino
+## Programming
 
-Programming
-- Principles
+- Programming >  Principles
   - DRY - Don't Repeat Yourself
   
-Database
+## Database
+
 * SQL
 
-Javascript
+## Javascript
+
 * ES6
 
 Const - Allows user to make constant variables. 
-const does not indicate that the assigned value will be constant, but that the binding with the value is constant. - s1
+> const does not indicate that the assigned value will be constant, but that the binding with the value is constant. - s1
 ```javascript
 const x = {};
 x.name = 'John';
@@ -29,7 +25,8 @@ console.log(x.name)
 >>  'John'
 ```
 
-Let - Historically, JavaScript only offered function scope and global scope to control the lifetime
+Let - 
+> Historically, JavaScript only offered function scope and global scope to control the lifetime
 and the visibility of a variable. ES2015 introduces the let keyword to declare variables that respect the block
 scope - s1
 ```javascript
@@ -41,7 +38,7 @@ console.log(x);
 ```
 
 Arrow Functions - ES6 syntax for writing functions
-But there is another important feature to know about arrow functions: arrow functions are
+> But there is another important feature to know about arrow functions: arrow functions are
 bound to their lexical scope. This means that inside an arrow function the value of this is
 the same as in the parent block. - s1
 ```javascript
@@ -86,13 +83,12 @@ person.waitAndGreetTwo();
   
 ```
 
-
-Classes -
-super
-constructor
-class
-extends
-static
+Classes
+- super
+- constructor
+- class
+- extends
+- static
 ```javascript
 class Person {
  constructor (name, surname, age) {
@@ -129,8 +125,10 @@ PersonWithMiddlename.older(person3, person1).name
 ```
 
 
-* Node
-* Module - Node.js uses the concept of a module as a fundamental means to structure the code of a program. . It is the building block for creating applications and reusable libraries called packages (a package is also frequently referred to as a module since, usually, it has one single module as an entry point).  - s1
+Node
+Features
+**Module**
+> Node.js uses the concept of a module as a fundamental means to structure the code of a program. . It is the building block for creating applications and reusable libraries called packages (a package is also frequently referred to as a module since, usually, it has one single module as an entry point).  - s1
 
 
 Vanilla
