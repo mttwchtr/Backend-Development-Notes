@@ -5,15 +5,16 @@
 
 ## Programming
 
-- Programming >  Principles
-  - DRY - Don't Repeat Yourself
+### Programming >  Principles
+
+**DRY**
+Don't Repeat Yourself
   
 ## Database
 
-* SQL (Structured Query Language)
+### SQL (Structured Query Language)
 
 ## Javascript
-
 
 ### JavaScript > Patterns
 
@@ -28,6 +29,41 @@ add(1, 2, result => console.log('Result: ' + result));
 >> Result: 3
 ```
 
+```javascript
+const fs = require('fs');
+
+function readFile(filename, callback) {
+    // you pass readFile a file name, and it gives you a callback with the data as the first param when it gets it
+    fs.readFile(filename, 'utf8', (err, data) => {
+      callback(data);
+ });
+}
+
+function createFileReader(filename) {
+  const listeners = [];
+  // The callback we are passing to readFile is a function definition with a param of value, and a body that calls each listener
+  readFile(filename, value => {
+    listeners.forEach(listener => {
+      listener(value)
+     });
+  });
+  return {
+    onDataReady: listener => {
+      // pushes onto the listeners array one or more function definitions, which are invoked when readFile returns data
+      listeners.push(listener)
+      listeners.push(() => console.log('The file has returned its data.'))
+    }
+  };
+}
+
+// returns an object with a property called 'onDataReady'. 
+const reader1 = createFileReader('data.txt');
+
+// calls the 'onDataReady' property with a function definition as a parameter. This function definition gets pushed onto the list of listeners. Each of these listeners is invoked when the readFile returns data
+reader1.onDataReady(data => {
+  console.log(data)
+});
+```
 
 ### Javascript > ES6
 
