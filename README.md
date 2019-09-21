@@ -10,12 +10,12 @@
   
 ## Database
 
-* SQL
+* SQL (Structured Query Language)
 
 ## Javascript
 
 
-* JavaScript > Patterns
+### JavaScript > Patterns
 
 **Callback Pattern**
 > In JavaScript, a callback is a function that is passed as an argument to another function and is invoked with the result when the operation completes. - s1
@@ -29,7 +29,7 @@ add(1, 2, result => console.log('Result: ' + result));
 ```
 
 
-* Javascript > ES6
+### Javascript > ES6
 
 **Const**
 * Allows user to make constant variables. 
@@ -186,10 +186,9 @@ person.greet('Howdy')
 >> "Howdy, Alan"
 ```
 
+### Javascript > Node
 
-* Javascript > Node
-
-* Javascript > Node > Concepts
+### Javascript > Node > Concepts
 
 **Asynchronous vs. Synchronous**
 
@@ -226,19 +225,16 @@ additionAsync(), and then back to its caller. This property in Node.js is crucia
 control back to the event loop as soon as an asynchronous request is sent, thus allowing a
 new event from the queue to be processed.
 
-
-* Javascript > Node > Features
+### Javascript > Node > Features
 
 **Module**
 > Node.js uses the concept of a module as a fundamental means to structure the code of a program. . It is the building block for creating applications and reusable libraries called packages (a package is also frequently referred to as a module since, usually, it has one single module as an entry point).  - s1
 
-* Javascript > Vanilla
-* Javascript > Vanilla > Concepts
+### Javascript > Vanilla
+### Javascript > Vanilla > Concepts
 
 ** Lexical Scoping **
 > defines how variable names are resolved in nested functions: inner functions contain the scope of parent functions even if the parent function has returned. - https://stackoverflow.com/questions/1047454/what-is-lexical-scope
-
-* JavaScript > Vanilla > Features
 
 **Closures**
 > closure is the combination of a function and the lexical environment within which that function was declared.
@@ -257,6 +253,8 @@ var myFunc = makeFunc();
 myFunc();
 >> Mozilla
 ```
+
+### JavaScript > Vanilla > Features
 
 **setTimeOut**
 Can be used to simulate an asynchronous event
