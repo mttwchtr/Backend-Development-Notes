@@ -17,13 +17,23 @@
 * Javascript > ES6
 
 **Const**
-Allows user to make constant variables. 
+* Allows user to make constant variables. 
 > const does not indicate that the assigned value will be constant, but that the binding with the value is constant. - s1
 ```javascript
 const x = {};
 x.name = 'John';
 console.log(x.name)
 >>  'John'
+```
+
+**Template Literals**
+> The main benefits are that template literal syntax can interpolate variables or expressions using ${expression}
+inside the string (this is the reason why this syntax is called “template”) and that a single string can finally be easily written in multiple lines.  - s1
+```javascript
+const name = 'John';
+const greeting = `Hi, my name is ${name}`;
+console.log(greeting);
+>>  Hi, my name is John
 ```
 
 **Let**
@@ -39,7 +49,7 @@ console.log(x);
 ```
 
 **Arrow Functions**
-ES6 syntax for writing functions
+* Updated syntax for writing functions
 > But there is another important feature to know about arrow functions: arrow functions are
 bound to their lexical scope. This means that inside an arrow function the value of this is
 the same as in the parent block. - s1
@@ -127,6 +137,41 @@ PersonWithMiddlename.older(person3, person1).name
 ```
 
 
+**Enhanced object literals**
+- get
+- set
+>  This
+syntax offers a shorthand to assign variables and functions as members of the object, allows
+us to define computed member names at creation time, and also handy setter and getter
+methods. - s1
+```javascript
+const person = {
+  name : 'George',
+  surname : 'Boole',
+  greet(x) {
+    return `${x}, ${this.name}`;
+  },
+  get fullname () {
+    return this.name + ' ' + this.surname;
+  },
+  set fullname (fullname) {
+    let parts = fullname.split(' ');
+    this.name = parts[0];
+    this.surname = parts[1];
+  }
+};
+
+console.log(person.fullname);
+ >> "George Boole"
+console.log(person.fullname = 'Alan Turing'); 
+>> "Alan Turing"
+console.log(person.name); 
+>> "Alan"
+person.greet('Howdy')
+>> "Howdy, Alan"
+```
+
+
 * Javascript > Node
 
 * Javascript > Node > Features
@@ -134,9 +179,9 @@ PersonWithMiddlename.older(person3, person1).name
 **Module**
 > Node.js uses the concept of a module as a fundamental means to structure the code of a program. . It is the building block for creating applications and reusable libraries called packages (a package is also frequently referred to as a module since, usually, it has one single module as an entry point).  - s1
 
+* Javascript > Vanilla
+* Javascript > Vanilla > Concepts
 
-Vanilla
-Concepts
-Lexical Scoping 
+** Lexical Scoping **
 > defines how variable names are resolved in nested functions: inner functions contain the scope of parent functions even if the parent function has returned. - https://stackoverflow.com/questions/1047454/what-is-lexical-scope
 
