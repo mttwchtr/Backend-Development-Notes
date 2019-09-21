@@ -63,6 +63,9 @@ const reader1 = createFileReader('data.txt');
 reader1.onDataReady(data => {
   console.log(data)
 });
+
+>> {data from data.txt}
+>> The file has returned its data.
 ```
 
 ### Javascript > ES6
