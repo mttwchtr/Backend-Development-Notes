@@ -266,8 +266,24 @@ new event from the queue to be processed.
 
 ### Javascript > Node > Features
 
-**Module**
+**module**
 > Node.js uses the concept of a module as a fundamental means to structure the code of a program. . It is the building block for creating applications and reusable libraries called packages (a package is also frequently referred to as a module since, usually, it has one single module as an entry point).  - s1
+
+**process.nextTick()**
+>  which defers the execution of a function until the next pass of the event loop. Its functioning is very simple; it takes a callback as an argument and pushes it to the top of the event queue, in front of any pending I/O event, and returns immediately. The callback will then be invoked as soon as the event loop runs again. - s1
+``` javascript
+const fs = require('fs');
+
+function readFile(filename, callback) {
+    fs.readFile(filename, 'utf8', (err, data) => {
+      process.nextTick(() => callback(data));
+ });
+}
+
+readFile('data.txt', data => {
+  console.log(data)
+});
+```
 
 ### Javascript > Vanilla
 ### Javascript > Vanilla > Concepts
