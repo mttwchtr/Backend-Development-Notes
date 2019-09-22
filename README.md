@@ -227,6 +227,10 @@ person.greet('Howdy')
 
 ### Javascript > Node
 
+### JavaScript > Node > Gotchas
+
+>  Throwing inside an asynchronous callback will cause the exception to jump up to the event loop and never be propagated to the next callback. In Node.js, this is an unrecoverable state and the application will simply shut down printing the error to the stderr interface. - s1
+
 ### Javascript > Node > Concepts
 
 **Asynchronous vs. Synchronous**
@@ -288,6 +292,15 @@ readFile('data.txt', data => {
 ### Javascript > Vanilla
 ### Javascript > Vanilla > Concepts
 
+**Falsey**
+- false
+- undefined
+- null
+- 0
+- NaN
+- the empty string ("")
+All other values, including all objects, evaluate to true when passed to a conditional statement. - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling
+
 ** Lexical Scoping **
 > defines how variable names are resolved in nested functions: inner functions contain the scope of parent functions even if the parent function has returned. - https://stackoverflow.com/questions/1047454/what-is-lexical-scope
 
@@ -319,3 +332,36 @@ setTimeout(function(){
 }
 >> I waited
 ```
+
+**throw**
+> The throw statement throws a user-defined exception. Execution of the current function will stop (the statements after throw won't be executed), and control will be passed to the first catch block in the call stack. If no catch block exists among caller functions, the program will terminate. -https://developer.mozilla.org/enUS/docs/Web/JavaScript/Reference/Statements/throw
+```javacript
+function getRectArea(width, height) {
+  if (isNaN(width) || isNaN(height)) {
+    throw new Error("Parameter is not a number!");
+  }
+}
+
+try {
+  getRectArea(3, 'A');
+}
+catch(e) {
+  console.error(e);
+}
+
+>> Error: Parameter is not a number!
+```
+
+**try...catch**
+> marks a block of statements to try, and specifies a response, should an exception be thrown. - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
+```javacript
+try {
+  nonExistentFunction();
+}
+catch(error) {
+  console.error(error);
+}
+
+>> ReferenceError: nonExistentFunction is not defined
+```
+
