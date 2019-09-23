@@ -227,6 +227,12 @@ person.greet('Howdy')
 
 ### Javascript > Node
 
+### JavaScript > Node > Patterns
+
+**module pattern**
+> Modules are the bricks for structuring non-trivial applications - s1
+> Node.js uses the concept of a module as a fundamental means to structure the code of a program. . It is the building block for creating applications and reusable libraries called packages (a package is also frequently referred to as a module since, usually, it has one single module as an entry point).  - s1
+
 ### JavaScript > Node > Gotchas
 
 >  Throwing inside an asynchronous callback will cause the exception to jump up to the event loop and never be propagated to the next callback. In Node.js, this is an unrecoverable state and the application will simply shut down printing the error to the stderr interface. - s1
@@ -270,9 +276,6 @@ new event from the queue to be processed.
 
 ### Javascript > Node > Features
 
-**module**
-> Node.js uses the concept of a module as a fundamental means to structure the code of a program. . It is the building block for creating applications and reusable libraries called packages (a package is also frequently referred to as a module since, usually, it has one single module as an entry point).  - s1
-
 **process.nextTick()**
 >  which defers the execution of a function until the next pass of the event loop. Its functioning is very simple; it takes a callback as an argument and pushes it to the top of the event queue, in front of any pending I/O event, and returns immediately. The callback will then be invoked as soon as the event loop runs again. - s1
 ``` javascript
@@ -291,6 +294,24 @@ readFile('data.txt', data => {
 
 ### Javascript > Vanilla
 ### Javascript > Vanilla > Concepts
+
+**Expression**
+> An expression is any valid unit of code that resolves to a value. - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
+> Every syntactically valid expression resolves to some value but conceptually, there are two types of expressions: with side effects (for example: those that assign value to a variable) and those that in some sense evaluate and therefore resolve to a value. - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
+
+**Function Expression**
+Assigning a function definition to a value
+```javascript
+var sayHi = function() {
+    console.log("Hello, World!");
+};
+
+sayHi(); 
+
+>>  "Hello, World!"
+```
+
+
 
 **Falsey**
 - false
@@ -350,6 +371,27 @@ catch(e) {
 }
 
 >> Error: Parameter is not a number!
+```
+
+
+**this**
+> refer to the current object. - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
+```javacript
+const Person = function(name, favMusicGenre) {
+  this.name = name;
+  this.favMusicGenre = favMusicGenre;
+
+  this.greet = function() {
+    console.log(this);
+    return `Hi, I'm ${this.name} and I like ${favMusicGenre} music.`;
+  }
+}
+
+const timmy = new Person('Timmy', 'Rock');
+timmy.greet();
+
+>> Person { name: 'Timmy', favMusicGenre: 'Rock', greet: [Function] }
+>> 'Hi, I\'m Timmy and I like Rock music.'
 ```
 
 **try...catch**
