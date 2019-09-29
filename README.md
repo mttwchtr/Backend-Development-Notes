@@ -5,11 +5,141 @@
 
 ## Programming
 
+### Programming > Concepts
+
+**Virtual Machine**
+> A virtual machine is a computer file, typically called an image, that behaves like an actual computer. In other words, creating a computer within a computer. It runs in a window, much like any other program, giving the end user the same experience on a virtual machine as they would have on the host operating system itself. The virtual machine is sandboxed from the rest of the system, meaning that the software inside a virtual machine can’t escape or tamper with the computer itself. This produces an ideal environment for testing other operating systems including beta releases, accessing virus-infected data, creating operating system backups, and running software or applications on operating systems they weren’t originally intended for. - https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/
+
 ### Programming >  Principles
 
 **DRY**
 Don't Repeat Yourself
-  
+
+
+## Tools
+
+**curl**
+
+> command line tool and library for transferring data with URLs - https://curl.haxx.se/
+> API documentations are normally written with reference to cURL. If you understand how to use cURL, you’ll have no problems understanding API documentations. - https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/
+
+```terminal
+$ curl -H "Content-Type: application/json" https://api.github.com -v
+
+
+* Rebuilt URL to: https://api.github.com/
+*   Trying 192.30.253.116...
+* TCP_NODELAY set
+* Connected to api.github.com (192.30.253.116) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*   CAfile: /etc/ssl/cert.pem
+  CApath: none
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+* TLSv1.2 (OUT), TLS change cipher, Client hello (1):
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+* TLSv1.2 (IN), TLS change cipher, Client hello (1):
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: C=US; ST=California; L=San Francisco; O=GitHub, Inc.; CN=*.github.com
+*  start date: Jul  8 00:00:00 2019 GMT
+*  expire date: Jul 16 12:00:00 2020 GMT
+*  subjectAltName: host "api.github.com" matched cert's "*.github.com"
+*  issuer: C=US; O=DigiCert Inc; OU=www.digicert.com; CN=DigiCert SHA2 High Assurance Server CA
+*  SSL certificate verify ok.
+> GET / HTTP/1.1
+> Host: api.github.com
+> User-Agent: curl/7.54.0
+> Accept: */*
+> Content-Type: application/json
+> 
+< HTTP/1.1 200 OK
+< Server: GitHub.com
+< Date: Sun, 29 Sep 2019 14:03:05 GMT
+< Content-Type: application/json; charset=utf-8
+< Content-Length: 2165
+< Status: 200 OK
+< X-RateLimit-Limit: 60
+< X-RateLimit-Remaining: 56
+< X-RateLimit-Reset: 1569769385
+< Cache-Control: public, max-age=60, s-maxage=60
+< Vary: Accept
+< ETag: "7dc470913f1fe9bb6c7355b50a0737bc"
+< X-GitHub-Media-Type: github.v3; format=json
+< Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type
+< Access-Control-Allow-Origin: *
+< Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+< X-Frame-Options: deny
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+< Content-Security-Policy: default-src 'none'
+< X-GitHub-Request-Id: 26AC:05B4:6F2CA2:1017C46:5D90B999
+< 
+{
+  "current_user_url": "https://api.github.com/user",
+  "current_user_authorizations_html_url": "https://github.com/settings/connections/applications{/client_id}",
+  "authorizations_url": "https://api.github.com/authorizations",
+  "code_search_url": "https://api.github.com/search/code?q={query}{&page,per_page,sort,order}",
+  "commit_search_url": "https://api.github.com/search/commits?q={query}{&page,per_page,sort,order}",
+  "emails_url": "https://api.github.com/user/emails",
+  "emojis_url": "https://api.github.com/emojis",
+  "events_url": "https://api.github.com/events",
+  "feeds_url": "https://api.github.com/feeds",
+  "followers_url": "https://api.github.com/user/followers",
+  "following_url": "https://api.github.com/user/following{/target}",
+  "gists_url": "https://api.github.com/gists{/gist_id}",
+  "hub_url": "https://api.github.com/hub",
+  "issue_search_url": "https://api.github.com/search/issues?q={query}{&page,per_page,sort,order}",
+  "issues_url": "https://api.github.com/issues",
+  "keys_url": "https://api.github.com/user/keys",
+  "notifications_url": "https://api.github.com/notifications",
+  "organization_repositories_url": "https://api.github.com/orgs/{org}/repos{?type,page,per_page,sort}",
+  "organization_url": "https://api.github.com/orgs/{org}",
+  "public_gists_url": "https://api.github.com/gists/public",
+  "rate_limit_url": "https://api.github.com/rate_limit",
+  "repository_url": "https://api.github.com/repos/{owner}/{repo}",
+  "repository_search_url": "https://api.github.com/search/repositories?q={query}{&page,per_page,sort,order}",
+  "current_user_repositories_url": "https://api.github.com/user/repos{?type,page,per_page,sort}",
+  "starred_url": "https://api.github.com/user/starred{/owner}{/repo}",
+  "starred_gists_url": "https://api.github.com/gists/starred",
+  "team_url": "https://api.github.com/teams",
+  "user_url": "https://api.github.com/users/{user}",
+  "user_organizations_url": "https://api.github.com/user/orgs",
+  "user_repositories_url": "https://api.github.com/users/{user}/repos{?type,page,per_page,sort}",
+  "user_search_url": "https://api.github.com/search/users?q={query}{&page,per_page,sort,order}"
+}
+
+```
+
+## API
+
+>  API is an application programming interface. It is a set of rules that allow programs to talk to each other. The developer creates the API on the server and allows the client to talk to it. - https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/
+
+## API > Rest
+
+> REST stands for REpresentational State Transfer. It means when a RESTful API is called, the server will transfer to the client a representation of the state of the requested resource. - https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-1-introduction-b4a072f8740f
+
+## HTTP
+
+## HTTP > Headers
+
+> General headers - apply to both requests and responses, but with no relation to the data transmitted in the body.
+> Request headers - contain more information about the resource to be fetched, or about the client requesting the resource.
+> Response headers-  hold additional information about the response, like its location or about the server providing it.
+> Entity headers - contain information about the body of the resource, like its content length or MIME type.
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
+
+
 ## Database
 
 ### SQL (Structured Query Language)
@@ -229,15 +359,18 @@ person.greet('Howdy')
 
 ### JavaScript > Node > Patterns
 
-**module pattern**
-> Modules are the bricks for structuring non-trivial applications - s1
-> Node.js uses the concept of a module as a fundamental means to structure the code of a program. . It is the building block for creating applications and reusable libraries called packages (a package is also frequently referred to as a module since, usually, it has one single module as an entry point).  - s1
-
 ### JavaScript > Node > Gotchas
 
 >  Throwing inside an asynchronous callback will cause the exception to jump up to the event loop and never be propagated to the next callback. In Node.js, this is an unrecoverable state and the application will simply shut down printing the error to the stderr interface. - s1
 
 ### Javascript > Node > Concepts
+
+**Module System**
+> Modules are the bricks for structuring non-trivial applications, but also the main mechanism to enforce information hiding by keeping private all the functions and variables that are not explicitly marked to be exported.  - s1
+
+> Node.js uses the concept of a module as a fundamental means to structure the code of a program. . It is the building block for creating applications and reusable libraries called packages (a package is also frequently referred to as a module since, usually, it has one single module as an entry point).  - s1
+
+> The essential concept to remember is that everything inside a module is private unless it's assigned to the module.exports variable. The content of this variable is then cached and returned when the module is loaded using require(). - s1
 
 **Asynchronous vs. Synchronous**
 
