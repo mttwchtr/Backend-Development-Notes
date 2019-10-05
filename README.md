@@ -4,6 +4,7 @@
     - s1. Node Design Patterns, 2nd Edition, Mario Casciaro, Luciano Mammino
     - s2. Patterns of Enterprise Application Architecture, Martin Fowler
     - s3. Web Development with Node and Express, Ethan Brown
+    - s4. Node.js 8 the Right Way, Jim R. Wilson
 
 ## Programming
 
@@ -563,6 +564,9 @@ asyncFoo( err => {
 >  Throwing inside an asynchronous callback will cause the exception to jump up to the event loop and never be propagated to the next callback. In Node.js, this is an unrecoverable state and the application will simply shut down printing the error to the stderr interface. - s1
 
 ### Javascript > Node > Concepts
+
+**initial use case**
+> Creating web services is what Node.js was made for, and that's still the dominant use case for it. - s4
 
 **event-driven programming**
 > The core philosophy behind Node is that of event-driven programming.What that means for you, the programmer, is that you have to understand what events are available to you and how to respond to them. Many people are introduced to event-driven programming by implementing a user interface: the user clicks on something, and you handle the “click event.” - s3
