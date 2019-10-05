@@ -2,15 +2,34 @@
 
 ## Sources
     - s1. Node Design Patterns, 2nd Edition, Mario Casciaro, Luciano Mammino
+    - s2. Patterns of Enterprise Application Architecture, Martin Fowler
 
 ## Programming
+
+## Programming > Patterns
+
+**Microservice**
+> In short, the microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies. - https://martinfowler.com/microservices/
 
 ### Programming > Concepts
 
 **Virtual Machine**
 > A virtual machine is a computer file, typically called an image, that behaves like an actual computer. In other words, creating a computer within a computer. It runs in a window, much like any other program, giving the end user the same experience on a virtual machine as they would have on the host operating system itself. The virtual machine is sandboxed from the rest of the system, meaning that the software inside a virtual machine can’t escape or tamper with the computer itself. This produces an ideal environment for testing other operating systems including beta releases, accessing virus-infected data, creating operating system backups, and running software or applications on operating systems they weren’t originally intended for. - https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/
 
-### Programming >  Principles
+## Programming > Terms
+
+**Pattern**
+> There’s no generally accepted definition of a pattern, but perhaps the best place to start is Christopher Alexander, an inspiration for many pattern enthusiasts: “Each pattern describes a problem which occurs over and over again in our environment, and then describes the core of the solution to that problem, in such a way that you can use this solution a million times over, without ever doing it the same way twice” [Alexander et al.]. - s2
+
+
+**Throughput**
+> Throughput is how much stuff you can do in a given amount of time. If you’re timing the copying of a file, throughput might be measured in bytes per second. For enterprise applications a typical measure is transactions per second
+(tps), but the problem is that this depends on the complexity of your transaction. For your particular system you should pick a common set of transactions. - s2
+
+**Scalability**
+> Scalability is a measure of how adding resources (usually hardware) affects performance. A scalable system is one that allows you to add hardware and get a commensurate performance improvement, such as doubling how many servers you have to double your throughput. Vertical scalability, or scaling up, means adding more power to a single server, such as more memory. Horizontal scalability, or scaling out, means adding more servers. - s2
+
+## Programming >  Principles
 
 **DRY**
 Don't Repeat Yourself
