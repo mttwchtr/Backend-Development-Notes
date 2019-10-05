@@ -7,12 +7,12 @@
 
 ## Programming
 
-## Programming > Patterns
+### Programming > Patterns
 
 **Microservice**
 > In short, the microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies. - https://martinfowler.com/microservices/
 
-## Programming > Concepts
+### Programming > Concepts
 
 **Virtual Machine**
 > A virtual machine is a computer file, typically called an image, that behaves like an actual computer. In other words, creating a computer within a computer. It runs in a window, much like any other program, giving the end user the same experience on a virtual machine as they would have on the host operating system itself. The virtual machine is sandboxed from the rest of the system, meaning that the software inside a virtual machine can’t escape or tamper with the computer itself. This produces an ideal environment for testing other operating systems including beta releases, accessing virus-infected data, creating operating system backups, and running software or applications on operating systems they weren’t originally intended for. - https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/
@@ -35,8 +35,30 @@
 **DRY**
 Don't Repeat Yourself
 
+## API
 
-## Tools
+>  API is an application programming interface. It is a set of rules that allow programs to talk to each other. The developer creates the API on the server and allows the client to talk to it. - https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/
+
+### API > Rest
+
+> REST stands for REpresentational State Transfer. It means when a RESTful API is called, the server will transfer to the client a representation of the state of the requested resource. - https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-1-introduction-b4a072f8740f
+
+
+## Git
+
+**.gitignore**
+> If you create a file in your repository named .gitignore, Git uses it to determine which files and directories to ignore, before you make a commit. A .gitignore file should be committed into your repository, in order to share the ignore rules with any other users that clone the repository. - https://help.github.com/en/articles/ignoring-files
+```git
+# ignore packages installed by npm
+node_modules
+
+# put any other files you don't want to check in here,
+# such as .DS_Store (OSX), *.bak, etc.
+```
+
+## Web
+
+### Web > Tools
 
 **curl**
 
@@ -45,7 +67,6 @@ Don't Repeat Yourself
 
 ```terminal
 $ curl -H "Content-Type: application/json" https://api.github.com -v
-
 
 * Rebuilt URL to: https://api.github.com/
 *   Trying 192.30.253.116...
@@ -141,17 +162,7 @@ $ curl -H "Content-Type: application/json" https://api.github.com -v
 
 ```
 
-## API
-
->  API is an application programming interface. It is a set of rules that allow programs to talk to each other. The developer creates the API on the server and allows the client to talk to it. - https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/
-
-## API > Rest
-
-> REST stands for REpresentational State Transfer. It means when a RESTful API is called, the server will transfer to the client a representation of the state of the requested resource. - https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-1-introduction-b4a072f8740f
-
-## Web
-
-## Web > Terms
+### Web > Terms
 
 **static resources**
 >  HTML and alogo image. These are called “static resources” because they don’t change (as opposed to, for example, a stock ticker: every time you reload the page, the stock prices change). - s3
@@ -162,9 +173,9 @@ $ curl -H "Content-Type: application/json" https://api.github.com -v
 **slug**
 > A ‘slug' is the part that comes at the very end of a URL, and refers to a specific page or post. For example, the slug for the URL above (https://prettylinks.com/2017/08/link-redirect-types/) is link-redirect-types. - https://prettylinks.com/2018/03/url-slugs/
 
-## Web > HTTP
+### Web > HTTP
 
-## Web > HTTP > Headers
+### Web > HTTP > Headers
 
 > General headers - apply to both requests and responses, but with no relation to the data transmitted in the body.
 > Request headers - contain more information about the resource to be fetched, or about the client requesting the resource.
@@ -182,7 +193,7 @@ response.setHeader(“Content-Type”, “text/html”);
 
 ## Database
 
-### SQL (Structured Query Language)
+### Database > SQL (Structured Query Language)
 
 ## Javascript
 
@@ -397,6 +408,26 @@ person.greet('Howdy')
 
 ### Javascript > Node
 
+### JavaScript > Node > npm
+
+**npm**
+>  short for Node Package Manager, is two things: first and foremost, it is an online repository for the publishing of open-source Node.js projects; second, it is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management. - https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/
+
+**npm install --save**
+npm install --save express
+> If you specify the --save flag, it will update the package.json file - s3
+
+### JavaScript > Node > npm > dotenv
+> A common application level tool is dotenv which allows us to load environment variables from a file named .env. - https://codeburst.io/process-env-what-it-is-and-why-when-how-to-use-it-effectively-505d0b2831e7
+```javascript
+const dotenv = require('dotenv');
+dotenv.config();
+
+// in .env file
+NODE_ENV=development
+PORT=3001
+```
+
 ### JavaScript > Node > Libraries
 
 ### JavaScript > Node > Libraries > path
@@ -409,6 +440,14 @@ path.extname('index.html');
 ```
 
 ### JavaScript > Node > Libraries > process
+
+**env**
+> The process.env global variable is injected by the Node at runtime for your application to use and it represents the state of the system environment your application is in when it starts. For example, if the system has a PATH variable set, this will be made accessible to you through process.env.PATH which you can use to check where binaries are located and make external calls to them if required. - https://codeburst.io/process-env-what-it-is-and-why-when-how-to-use-it-effectively-505d0b2831e7
+Can be called from the terminal:
+```terminal
+PORT=8626 NODE_ENV=development node server.js
+```
+or from a .env file using the dotenv npm package.
 
 **nextTick()**
 >  which defers the execution of a function until the next pass of the event loop. Its functioning is very simple; it takes a callback as an argument and pushes it to the top of the event queue, in front of any pending I/O event, and returns immediately. The callback will then be invoked as soon as the event loop runs again. - s1
