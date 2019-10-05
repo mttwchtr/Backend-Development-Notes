@@ -11,7 +11,7 @@
 **Microservice**
 > In short, the microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies. - https://martinfowler.com/microservices/
 
-### Programming > Concepts
+## Programming > Concepts
 
 **Virtual Machine**
 > A virtual machine is a computer file, typically called an image, that behaves like an actual computer. In other words, creating a computer within a computer. It runs in a window, much like any other program, giving the end user the same experience on a virtual machine as they would have on the host operating system itself. The virtual machine is sandboxed from the rest of the system, meaning that the software inside a virtual machine can’t escape or tamper with the computer itself. This produces an ideal environment for testing other operating systems including beta releases, accessing virus-infected data, creating operating system backups, and running software or applications on operating systems they weren’t originally intended for. - https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/
@@ -441,13 +441,22 @@ console.log(parsedUrl)
   href: 'http://www.example.com/stuff?cats=3' }
 ```
 
+### JavaScript > Node > Antipatterns
+
+**callback hell/pyramid of doom**
+> The situation where the abundance of closures and in-place callback definitions transform the code into an unreadable and unmanageable blob - s1
+> The most evident problem with code such as the preceding snippet, is the poor readability. Due to the nesting being too deep, it's almost impossible to keep track of where a function ends and where another one begins - s1
+```javascript
+asyncFoo( err => {
+ asyncBar( err => {
+   asyncFooBar( err => {
+     //...
+   });
+ });
+});
+```
+
 ### JavaScript > Node > Patterns
-
-### JavaScript > Node > Gotchas
-
->  Throwing inside an asynchronous callback will cause the exception to jump up to the event loop and never be propagated to the next callback. In Node.js, this is an unrecoverable state and the application will simply shut down printing the error to the stderr interface. - s1
-
-### Javascript > Node > Concepts
 
 **Module System**
 > Modules are the bricks for structuring non-trivial applications, but also the main mechanism to enforce information hiding by keeping private all the functions and variables that are not explicitly marked to be exported.  - s1
@@ -455,6 +464,12 @@ console.log(parsedUrl)
 > Node.js uses the concept of a module as a fundamental means to structure the code of a program. . It is the building block for creating applications and reusable libraries called packages (a package is also frequently referred to as a module since, usually, it has one single module as an entry point).  - s1
 
 > The essential concept to remember is that everything inside a module is private unless it's assigned to the module.exports variable. The content of this variable is then cached and returned when the module is loaded using require(). - s1
+
+### JavaScript > Node > Gotchas
+
+>  Throwing inside an asynchronous callback will cause the exception to jump up to the event loop and never be propagated to the next callback. In Node.js, this is an unrecoverable state and the application will simply shut down printing the error to the stderr interface. - s1
+
+### Javascript > Node > Concepts
 
 **Asynchronous vs. Synchronous**
 
