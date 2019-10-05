@@ -169,6 +169,13 @@ $ curl -H "Content-Type: application/json" https://api.github.com -v
 > Entity headers - contain information about the body of the resource, like its content length or MIME type.
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
 
+**Content-Type**
+> One common header that you need to set is the Content-Type of the response so that the client knows how to interpret the data the server sends in the body. For example, if you are sending down an HTML file to the client, you should set the Content-Type to text/html, which you can with the following code:
+```javascript
+response.setHeader(“Content-Type”, “text/html”);
+```
+- https://codeburst.io/all-about-http-in-node-js-and-3-best-ways-for-http-requests-in-web-development-6e5b6876c3a4
+
 
 ## Database
 
