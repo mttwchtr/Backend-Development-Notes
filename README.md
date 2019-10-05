@@ -153,6 +153,9 @@ $ curl -H "Content-Type: application/json" https://api.github.com -v
 
 ## Web > Terms
 
+**static resources**
+>  HTML and alogo image. These are called “static resources” because they don’t change (as opposed to, for example, a stock ticker: every time you reload the page, the stock prices change). - s3
+
 **localhost**
 > localhost, as the name implies, refers to the computer you’re on. This is a common alias for the IPv4 loopback address 127.0.0.1, or the IPv6 loopback address ::1. You will often see 127.0.0.1 used instead - s3
 
@@ -407,6 +410,22 @@ path.extname('index.html');
 
 ### JavaScript > Node > Libraries > process
 
+**nextTick()**
+>  which defers the execution of a function until the next pass of the event loop. Its functioning is very simple; it takes a callback as an argument and pushes it to the top of the event queue, in front of any pending I/O event, and returns immediately. The callback will then be invoked as soon as the event loop runs again. - s1
+``` javascript
+const fs = require('fs');
+
+function readFile(filename, callback) {
+    fs.readFile(filename, 'utf8', (err, data) => {
+      process.nextTick(() => callback(data));
+ });
+}
+
+readFile('data.txt', data => {
+  console.log(data)
+});
+```
+
 **argv**
 argument vector
 > returns an array containing the command line arguments passed when the Node.js process was launched. The first element will be process.execPath. The second element will be the path to the JavaScript file being executed. The remaining elements will be any additional command line arguments. - https://nodejs.org/api/process.html#process_process_argv
@@ -506,6 +525,9 @@ asyncFoo( err => {
 
 ### Javascript > Node > Concepts
 
+**event-driven programming**
+> The core philosophy behind Node is that of event-driven programming.What that means for you, the programmer, is that you have to understand what events are available to you and how to respond to them. Many people are introduced to event-driven programming by implementing a user interface: the user clicks on something, and you handle the “click event.” - s3
+
 **the app is the web server**
 > If you’ve ever built a static HTML website before, or are coming from a PHP or ASP background, you’re probably used to the idea of the web server (Apache or IIS, for example) serving your static files so that a browser can view them over the network. Node offers a different paradigm than that of a traditional web server: the app that you write is the web server. Node simply provides the framework for you to build a web server.- s3
 
@@ -545,23 +567,20 @@ new event from the queue to be processed.
 
 ### Javascript > Node > Features
 
-**process.nextTick()**
->  which defers the execution of a function until the next pass of the event loop. Its functioning is very simple; it takes a callback as an argument and pushes it to the top of the event queue, in front of any pending I/O event, and returns immediately. The callback will then be invoked as soon as the event loop runs again. - s1
-``` javascript
-const fs = require('fs');
-
-function readFile(filename, callback) {
-    fs.readFile(filename, 'utf8', (err, data) => {
-      process.nextTick(() => callback(data));
- });
-}
-
-readFile('data.txt', data => {
-  console.log(data)
-});
+**__dirname**
+> \_\_dirname will resolve to the directory the executing script resides in. So if your script resides in /home/sites/app.js, \_\_dirname will resolve to /home/sites. It’s a good idea to use this handy global whenever possible. Failing to do so can cause hard-to-diagnose errors if you run your app from a different directory. - s3
+```javascript
+fs.readFile(__dirname + '/cat.txt', function(err, data) {
+  if (err) {
+    console.log(err)
+  } else {
+     onsole.log(data)
+  }
 ```
 
+
 ### Javascript > Vanilla
+
 ### Javascript > Vanilla > Concepts
 
 **Expression**
