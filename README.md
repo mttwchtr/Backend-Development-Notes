@@ -3,6 +3,7 @@
 ## Sources
     - s1. Node Design Patterns, 2nd Edition, Mario Casciaro, Luciano Mammino
     - s2. Patterns of Enterprise Application Architecture, Martin Fowler
+    - s3. Web Development with Node and Express, Ethan Brown
 
 ## Programming
 
@@ -151,6 +152,9 @@ $ curl -H "Content-Type: application/json" https://api.github.com -v
 ## Web
 
 ## Web > Terms
+
+**localhost**
+> localhost, as the name implies, refers to the computer you’re on. This is a common alias for the IPv4 loopback address 127.0.0.1, or the IPv6 loopback address ::1. You will often see 127.0.0.1 used instead - s3
 
 **slug**
 > A ‘slug' is the part that comes at the very end of a URL, and refers to a specific page or post. For example, the slug for the URL above (https://prettylinks.com/2017/08/link-redirect-types/) is link-redirect-types. - https://prettylinks.com/2018/03/url-slugs/
@@ -417,6 +421,30 @@ console.log(process.argv)
 ```
 > code from https://alligator.io/nodejs/command-line-arguments-node-scripts/
 
+### JavaScript > Node > Libraries > http
+
+**createServer**
+> takes a callback and returns an HTTP server. On each client request, the callback is passed in two arguments — the incoming request stream and an outgoing server response stream. - https://codeburst.io/all-about-http-in-node-js-and-3-best-ways-for-http-requests-in-web-development-6e5b6876c3a4
+```javascript
+const http = require('http');
+const port = 3000;
+
+const requestHandler = (request, response) => {
+  console.log(request.url)
+  response.end('Hello Node.js Server!')
+}
+
+const server = http.createServer(requestHandler)
+
+server.listen(port, (err) => {
+  if (err) {
+    return console.log('something bad happened', err)
+  }
+  console.log(`server is listening on ${port}`)
+})
+```
+> code from https://blog.risingstack.com/your-first-node-js-http-server/
+
 
 ### JavaScript > Node > Libraries > url
 
@@ -471,8 +499,10 @@ asyncFoo( err => {
 
 ### Javascript > Node > Concepts
 
-**Asynchronous vs. Synchronous**
+**the app is the web server**
+> If you’ve ever built a static HTML website before, or are coming from a PHP or ASP background, you’re probably used to the idea of the web server (Apache or IIS, for example) serving your static files so that a browser can view them over the network. Node offers a different paradigm than that of a traditional web server: the app that you write is the web server. Node simply provides the framework for you to build a web server.- s3
 
+**Asynchronous vs. Synchronous**
 * A synchronous callback
 ``` javascript
 function add(a, b, callback) {
