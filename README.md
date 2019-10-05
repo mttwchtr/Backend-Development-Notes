@@ -129,9 +129,16 @@ $ curl -H "Content-Type: application/json" https://api.github.com -v
 
 > REST stands for REpresentational State Transfer. It means when a RESTful API is called, the server will transfer to the client a representation of the state of the requested resource. - https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-1-introduction-b4a072f8740f
 
-## HTTP
+## Web
 
-## HTTP > Headers
+## Web > Terms
+
+**slug**
+> A ‘slug' is the part that comes at the very end of a URL, and refers to a specific page or post. For example, the slug for the URL above (https://prettylinks.com/2017/08/link-redirect-types/) is link-redirect-types. - https://prettylinks.com/2018/03/url-slugs/
+
+## Web > HTTP
+
+## Web > HTTP > Headers
 
 > General headers - apply to both requests and responses, but with no relation to the data transmitted in the body.
 > Request headers - contain more information about the resource to be fetched, or about the client requesting the resource.
@@ -356,6 +363,64 @@ person.greet('Howdy')
 ```
 
 ### Javascript > Node
+
+### JavaScript > Node > Libraries
+
+### JavaScript > Node > Libraries > path
+
+**extname**
+```javascript
+path.extname('index.html');
+
+>> '.html'
+```
+
+### JavaScript > Node > Libraries > process
+
+**argv**
+argument vector
+> returns an array containing the command line arguments passed when the Node.js process was launched. The first element will be process.execPath. The second element will be the path to the JavaScript file being executed. The remaining elements will be any additional command line arguments. - https://nodejs.org/api/process.html#process_process_argv
+
+```javascript
+// from terminal
+node example.js -a -b -c
+
+// in example.js
+console.log(process.argv)
+
+>> [
+  '/usr/bin/node',
+  '/some/path/to/example.js',
+  '-a',
+  '-b',
+  '-c'
+]
+```
+> code from https://alligator.io/nodejs/command-line-arguments-node-scripts/
+
+
+### JavaScript > Node > Libraries > url
+
+**parse**
+```javascript
+const urlParse = require('url').parse;
+const parsedUrl = urlParse('http://www.example.com/stuff?cats=3');
+console.log(parsedUrl)
+
+>>  Url {
+  protocol: 'http:',
+  slashes: true,
+  auth: null,
+  host: 'www.example.com',
+  port: null,
+  hostname: 'www.example.com',
+  hash: null,
+  search: '?cats=3',
+  query: 'cats=3',
+  pathname: '/stuff',
+  path: '/stuff?cats=3',
+  href: 'http://www.example.com/stuff?cats=3' }
+```
 
 ### JavaScript > Node > Patterns
 
