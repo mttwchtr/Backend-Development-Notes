@@ -20,6 +20,12 @@
 
 ## Programming > Terms
 
+**unit testing**
+>  Unit testing is very fine-grained, testing single components to make sure they function properly - s4
+
+**integration testing**
+>  tests the interaction between multiple components, or even the whole system - s4
+
 **Pattern**
 > There’s no generally accepted definition of a pattern, but perhaps the best place to start is Christopher Alexander, an inspiration for many pattern enthusiasts: “Each pattern describes a problem which occurs over and over again in our environment, and then describes the core of the solution to that problem, in such a way that you can use this solution a million times over, without ever doing it the same way twice” [Alexander et al.]. - s2
 
@@ -43,6 +49,22 @@ Don't Repeat Yourself
 ### API > Rest
 
 > REST stands for REpresentational State Transfer. It means when a RESTful API is called, the server will transfer to the client a representation of the state of the requested resource. - https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-1-introduction-b4a072f8740f
+
+
+## Bash
+
+**mkdir**
+makes a directory
+```bash
+mkdir test
+```
+
+**cp**
+copies a file to a destination
+```bash
+cp node_modules/mocha/mocha.js public/vendor
+```
+
 
 
 ## Git
@@ -414,9 +436,13 @@ person.greet('Howdy')
 **npm**
 >  short for Node Package Manager, is two things: first and foremost, it is an online repository for the publishing of open-source Node.js projects; second, it is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management. - https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/
 
+**npm install --save-dev**
+npm install --save-dev mocha
+> --save-dev instead of --save; this tells npm to list this package in the development dependencies instead of the runtime dependencies. This will reduce the number of dependencies the project has when we deploy live instances of the website. - s4
+
 **npm install --save**
 npm install --save express
-> If you specify the --save flag, it will update the package.json file - s3
+> If you specify the --save flag, it will update the package.json file - s4
 
 ### JavaScript > Node > npm > dotenv
 > A common application level tool is dotenv which allows us to load environment variables from a file named .env. - https://codeburst.io/process-env-what-it-is-and-why-when-how-to-use-it-effectively-505d0b2831e7
