@@ -25,6 +25,9 @@
 
 ## Programming > Terms
 
+**CRM**
+> is a technology for managing all your company’s relationships and interactions with customers and potential customers. The goal is simple: Improve business relationships. A CRM system helps companies stay connected to customers, streamline processes, and improve profitability. When people talk about CRM, they are usually referring to a CRM system, a tool that helps with contact management, sales management, productivity, and more. A CRM solution helps you focus on your organization’s relationships with individual people — including customers, service users, colleagues, or suppliers — throughout your lifecycle with them, including finding new customers, winning their business, and providing support and additional services throughout the relationship. - https://www.salesforce.com/crm/what-is-crm/
+
 **package manager**
 >  job is to obtain appropriate libraries and dependent software necessary to compile and run software on a particular operating system. - https://www.quora.com/What-is-Homebrew-for-macOS
 
