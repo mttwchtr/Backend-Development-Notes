@@ -8,6 +8,11 @@
 
 ## Programming
 
+### Programming > Tools
+
+**homebrew**
+> BSD UNIX, of which Darwin or OS X is a derivative, does not have a built-in package manager like aptitude, which is why Homebrew calls itself the “missing package manager.” Homebrew is one of several package managers for OS X, including MacPorts and Fink. Most of the popular UNIX software packages are available to be installed through Homebrew and those that aren't can be made available through some configuration in Ruby. - https://www.quora.com/What-is-Homebrew-for-macOS
+
 ### Programming > Patterns
 
 **Microservice**
@@ -20,6 +25,9 @@
 
 ## Programming > Terms
 
+**package manager**
+>  job is to obtain appropriate libraries and dependent software necessary to compile and run software on a particular operating system. - https://www.quora.com/What-is-Homebrew-for-macOS
+
 **unit testing**
 >  Unit testing is very fine-grained, testing single components to make sure they function properly - s4
 
@@ -28,7 +36,6 @@
 
 **Pattern**
 > There’s no generally accepted definition of a pattern, but perhaps the best place to start is Christopher Alexander, an inspiration for many pattern enthusiasts: “Each pattern describes a problem which occurs over and over again in our environment, and then describes the core of the solution to that problem, in such a way that you can use this solution a million times over, without ever doing it the same way twice” [Alexander et al.]. - s2
-
 
 **Throughput**
 > Throughput is how much stuff you can do in a given amount of time. If you’re timing the copying of a file, throughput might be measured in bytes per second. For enterprise applications a typical measure is transactions per second
