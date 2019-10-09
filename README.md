@@ -25,6 +25,10 @@
 
 ## Programming > Terms
 
+**SDK**
+Software Development Kit
+> An SDK seems to be a complete set of APIs that allow you to perform most any action you would need to for creating applications. In addition an SDK may include other tools for developing for the platform/item that it is for. An API on the other hand is just a series of related methods that may be good for a specific purpose. As an example, the JDK (Java Development Kit) contains the API as well as the compilers, runtimes, and other miscellaneous tools. The Java API is simply all the libraries that make up the core language that you can work with out of the box. - https://softwareengineering.stackexchange.com/questions/101873/whats-the-difference-between-an-api-and-an-sdk
+
 **CRM**
 > is a technology for managing all your company’s relationships and interactions with customers and potential customers. The goal is simple: Improve business relationships. A CRM system helps companies stay connected to customers, streamline processes, and improve profitability. When people talk about CRM, they are usually referring to a CRM system, a tool that helps with contact management, sales management, productivity, and more. A CRM solution helps you focus on your organization’s relationships with individual people — including customers, service users, colleagues, or suppliers — throughout your lifecycle with them, including finding new customers, winning their business, and providing support and additional services throughout the relationship. - https://www.salesforce.com/crm/what-is-crm/
 
