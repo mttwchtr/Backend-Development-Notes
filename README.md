@@ -430,7 +430,6 @@ PersonWithMiddlename.older(person3, person1).name
 >> Juan
 ```
 
-
 **Enhanced object literals**
 - get
 - set
@@ -654,7 +653,7 @@ asyncFoo( err => {
 > Creating web services is what Node.js was made for, and that's still the dominant use case for it. - s4
 
 **event-driven programming**
-> The core philosophy behind Node is that of event-driven programming.What that means for you, the programmer, is that you have to understand what events are available to you and how to respond to them. Many people are introduced to event-driven programming by implementing a user interface: the user clicks on something, and you handle the “click event.” - s3
+> The core philosophy behind Node is that of event-driven programming. What that means for you, the programmer, is that you have to understand what events are available to you and how to respond to them. Many people are introduced to event-driven programming by implementing a user interface: the user clicks on something, and you handle the “click event.” - s3
 
 **the app is the web server**
 > If you’ve ever built a static HTML website before, or are coming from a PHP or ASP background, you’re probably used to the idea of the web server (Apache or IIS, for example) serving your static files so that a browser can view them over the network. Node offers a different paradigm than that of a traditional web server: the app that you write is the web server. Node simply provides the framework for you to build a web server.- s3
@@ -691,7 +690,7 @@ console.log('after');
 be executed, but instead, it returns immediately, giving the control back to
 additionAsync(), and then back to its caller. This property in Node.js is crucial, as it gives
 control back to the event loop as soon as an asynchronous request is sent, thus allowing a
-new event from the queue to be processed.
+new event from the queue to be processed. - s3
 
 ### Javascript > Node > Features
 
@@ -705,7 +704,6 @@ fs.readFile(__dirname + '/cat.txt', function(err, data) {
      onsole.log(data)
   }
 ```
-
 
 ### Javascript > Vanilla
 
@@ -726,9 +724,23 @@ Uppercase:
 ```
 - s5
 
+**Statement**
+> A statement is a piece of code that can be executed and performs some kind of action. For example, if is a statement. One more example of a statement: a function declaration. - s5
+
+**Function Declaration**
+```javascript
+function add(x, y) {
+  return x + y;
+}
+```
+
 **Expression**
 > An expression is any valid unit of code that resolves to a value. - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
+
+>  let myStr = (myBool ? 'Yes' : 'No'); The operator _?_:_ used between the parentheses is called the ternary operator. It is the expression version of the if statement. - s5
+
 > Every syntactically valid expression resolves to some value but conceptually, there are two types of expressions: with side effects (for example: those that assign value to a variable) and those that in some sense evaluate and therefore resolve to a value. - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
+
 
 **Function Expression**
 Assigning a function definition to a value
