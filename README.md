@@ -596,6 +596,52 @@ server.listen(port, (err) => {
 > code from https://blog.risingstack.com/your-first-node-js-http-server/
 
 
+### JavaScript > Node > Libraries > error
+1. Standard JavaScript errors such as <EvalError>, <SyntaxError>, <RangeError>, <ReferenceError>, <TypeError>, and <URIError>.
+
+
+2. System errors triggered by underlying operating system constraints such as attempting to open a file that does not exist or attempting to send data over a closed socket.
+
+
+3. User-specified errors triggered by application code.
+
+
+4. AssertionErrors are a special class of error that can be triggered when Node.js detects an exceptional logic violation that should never occur. These are raised typically by the assert module.
+
+- https://nodejs.org/api/errors.html#errors_errors
+
+
+**error.stack**
+
+shows the call stack when the error occurred
+
+```javascript
+function h(z) {
+  const error = new Error();
+  console.log(error.stack);
+}
+function g(y) {
+  h(y + 1);
+}
+function f(x) {
+  g(x + 1);
+}
+f(3);
+
+>>Error
+    at h (evalmachine.<anonymous>:2:17)
+    at g (evalmachine.<anonymous>:6:3)
+    at f (evalmachine.<anonymous>:9:3)
+    at evalmachine.<anonymous>:11:1
+    at Script.runInContext (vm.js:133:20)
+    at Object.runInContext (vm.js:311:6)
+    at evaluate (/run_dir/repl.js:133:14)
+    at ReadStream.<anonymous> (/run_dir/repl.js:116:5)
+    at ReadStream.emit (events.js:198:13)
+    at addChunk (_stream_readable.js:288:12) 
+```
+- code from s5
+
 ### JavaScript > Node > Libraries > url
 
 **parse**
