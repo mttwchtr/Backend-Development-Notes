@@ -5,6 +5,7 @@
     - s2. Patterns of Enterprise Application Architecture, Martin Fowler
     - s3. Web Development with Node and Express, Ethan Brown
     - s4. Node.js 8 the Right Way, Jim R. Wilson
+    - s5. JavaScript for Impatient Programmers, Dr. Axel Rauschmayer
 
 ## Programming
 
@@ -237,8 +238,11 @@ response.setHeader(“Content-Type”, “text/html”);
 ### JavaScript > Patterns
 
 **Callback Pattern**
+
 > In JavaScript, a callback is a function that is passed as an argument to another function and is invoked with the result when the operation completes. - s1
+
 >  Callbacks are functions that are invoked to propagate the result of an operation and this is exactly what we need when dealing with asynchronous operations. They do replace the use of the return instruction that always executes synchronously. - s1
+
 ```javascript
 function add(a, b, callback) {
  callback(a + b);
@@ -246,6 +250,7 @@ function add(a, b, callback) {
 add(1, 2, result => console.log('Result: ' + result));
 >> Result: 3
 ```
+
 
 ```javascript
 const fs = require('fs');
@@ -373,6 +378,23 @@ person.waitAndGreetTwo();
 - class
 - extends
 - static
+> The static keyword defines a static method for a class. Static methods aren't called on instances of the class. Instead, they're called on the class itself. These are often utility functions, such as functions to create or clone objects. - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static
+
+```javascript
+class ClassWithStaticMethod {
+  static staticMethod() {
+    return 'static method has been called.';
+  }
+}
+
+console.log(ClassWithStaticMethod.staticMethod());
+>> expected output: "static method has been called.
+```
+- code from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static
+
+
+Example Class
+
 ```javascript
 class Person {
  constructor (name, surname, age) {
@@ -471,7 +493,30 @@ PORT=3001
 
 ### JavaScript > Node > Libraries
 
+
 ### JavaScript > Node > Libraries > path
+
+**extname**
+```javascript
+path.extname('index.html');
+
+>> '.html'
+```
+
+### JavaScript > Node > Libraries > assert
+> An assertion describes what the result of a computation is expected to look like and throws an exception if those expectations aren’t correct. - s5
+
+**equal**
+```javascript
+assert.equal(7 + 1, 8);
+
+>> undefined
+
+assert.equal(7 + 1, 6);
+
+>> AssertionError [ERR_ASSERTION]: 8 == 6
+```
+
 
 **extname**
 ```javascript
@@ -665,6 +710,21 @@ fs.readFile(__dirname + '/cat.txt', function(err, data) {
 ### Javascript > Vanilla
 
 ### Javascript > Vanilla > Concepts
+
+**naming conventions**
+```txt
+In general, JavaScript uses camel case, except for constants.
+
+Lowercase:
+    Functions, variables: myFunction
+    Methods: obj.myMethod
+
+Uppercase:
+    Classes: MyClass
+    Constants: MY_CONSTANT
+    Constants are also often written in camel case: myConstant
+```
+- s5
 
 **Expression**
 > An expression is any valid unit of code that resolves to a value. - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
