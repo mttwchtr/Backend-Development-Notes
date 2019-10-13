@@ -905,6 +905,9 @@ myFunc();
 
 **setTimeOut**
 Can be used to simulate an asynchronous event
+
+> It's important to note that setTimeout(..) doesn't put your callback on the event loop queue. What it does is set up a timer; when the timer expires, the environment places your callback into the event loop, such that some future tick will pick it up and execute it. - s6
+
 ```javascript
 setTimeout(function(){
   console.log('I waited'), 1000);
