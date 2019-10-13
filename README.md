@@ -6,6 +6,7 @@
     - s3. Web Development with Node and Express, Ethan Brown
     - s4. Node.js 8 the Right Way, Jim R. Wilson
     - s5. JavaScript for Impatient Programmers, Dr. Axel Rauschmayer
+    - s6. You Don't Know JS: Async & Performance, Kyle Simpson
 
 ## Programming
 
@@ -708,10 +709,11 @@ asyncFoo( err => {
 > If you’ve ever built a static HTML website before, or are coming from a PHP or ASP background, you’re probably used to the idea of the web server (Apache or IIS, for example) serving your static files so that a browser can view them over the network. Node offers a different paradigm than that of a traditional web server: the app that you write is the web server. Node simply provides the framework for you to build a web server.- s3
 
 **Asynchronous vs. Synchronous**
-> 
-In its most basic form, JavaScript is a synchronous, blocking, single-threaded language, in which only one operation can be in progress at a time. But web browsers define functions and APIs that allow us to register functions that should not be executed synchronously, and should instead be invoked asynchronously when some kind of event occurs (the passage of time, the user's interaction with the mouse, or the arrival of data over the network, for example). This means that you can let your code do several things at the same time without stopping or blocking your main thread. - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing
+> A JavaScript program is (practically) always broken up into two or more chunks, where the first chunk runs now and the next chunk runs later, in response to an event. Even though the program is executed chunk-by-chunk, all of them share the same access to the program scope and state, so each modification to state is made on top of the previous state. Whenever there are events to run, the event loop runs until the queue is empty. Each iteration of the event loop is a "tick." User interaction, IO, and timers enqueue events on the event queue. At any given moment, only one event can be processed from the queue at a time. While an event is executing, it can directly or indirectly cause one or more subsequent events. Concurrency is when two or more chains of events interleave over time, such that from a high-level perspective, they appear to be running simultaneously (even though at any given moment only one event is being processed). - s6
 
-> If we're running an operation that takes time however, like querying a database and using the results to populate templates, it is better to push this off the main thread and complete the task asynchronously. Over time, you'll learn when it makes more sense to choose an asynchronous technique over a synchronous one. - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing
+> In its most basic form, JavaScript is a synchronous, blocking, single-threaded language, in which only one operation can be in progress at a time. - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing
+
+> If we're running an operation that takes time however, like querying a database and using the results to populate templates, it is better to push this off the main thread and complete the task asynchronously - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing
 
 
 
@@ -746,7 +748,7 @@ In its most basic form, JavaScript is a synchronous, blocking, single-threaded l
 </body>
 </html>
 ```
-> If you click the first button and then quickly click the second one, you'll see that the alert does not appear until the circles have finished being rendered. The first operation blocks the second one until it has finished running. Why is this? The answer is because JavaScript, generally speaking, is single threaded. At this point we need to introduce the concept of threads. - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts
+> If you click the first button and then quickly click the second one, you'll see that the alert does not appear until the circles have finished being rendered. The first operation blocks the second one until it has finished running. Why is this? The answer is because JavaScript, generally speaking, is single threaded. - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts
 
 * An example of an asynchronous function
 ```javascript
