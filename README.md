@@ -708,6 +708,13 @@ asyncFoo( err => {
 > If you’ve ever built a static HTML website before, or are coming from a PHP or ASP background, you’re probably used to the idea of the web server (Apache or IIS, for example) serving your static files so that a browser can view them over the network. Node offers a different paradigm than that of a traditional web server: the app that you write is the web server. Node simply provides the framework for you to build a web server.- s3
 
 **Asynchronous vs. Synchronous**
+> 
+In its most basic form, JavaScript is a synchronous, blocking, single-threaded language, in which only one operation can be in progress at a time. But web browsers define functions and APIs that allow us to register functions that should not be executed synchronously, and should instead be invoked asynchronously when some kind of event occurs (the passage of time, the user's interaction with the mouse, or the arrival of data over the network, for example). This means that you can let your code do several things at the same time without stopping or blocking your main thread. - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing
+
+> If we're running an operation that takes time however, like querying a database and using the results to populate templates, it is better to push this off the main thread and complete the task asynchronously. Over time, you'll learn when it makes more sense to choose an asynchronous technique over a synchronous one. - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing
+
+
+
 * An example of synchronous blocking code, adapted from s5
 ```HTML
 <!doctype html>
