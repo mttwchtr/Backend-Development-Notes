@@ -705,6 +705,40 @@ asyncFoo( err => {
 > If you’ve ever built a static HTML website before, or are coming from a PHP or ASP background, you’re probably used to the idea of the web server (Apache or IIS, for example) serving your static files so that a browser can view them over the network. Node offers a different paradigm than that of a traditional web server: the app that you write is the web server. Node simply provides the framework for you to build a web server.- s3
 
 **Asynchronous vs. Synchronous**
+* An example of synchronous blocking code, adapted from s5
+```HTML
+<!doctype html>
+<html>
+<body>
+    <a id="block" href="">Block incrementing for 5 seconds</a>
+    <div id="counter">0</div>
+    <button onclick="buttonClick()">Click to increment</button>
+    <script>
+        var clickCounter = 0;
+        
+        function buttonClick() {
+          clickCounter += 1;
+          document.getElementById("counter").innerHTML = clickCounter;
+        }
+         
+        document.getElementById('block').addEventListener('click', onClick);
+        
+        function onClick(event) {
+          event.preventDefault();
+          sleep();   
+        }
+        
+        function sleep(milliseconds) {
+          var start = Date.now();
+          while ((Date.now() - start) < 5000);
+        }
+    </script>
+</body>
+</html>
+```
+
+
+
 * A synchronous callback
 ``` javascript
 function add(a, b, callback) {
