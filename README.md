@@ -21,6 +21,9 @@
 
 ### Programming > Concepts
 
+**thread**
+> A thread is basically a single process that a program can use to complete tasks. Each thread can only do a single task at once: Task A --> Task B --> Task C. Each task will be run sequentially; a task has to complete before the next one can be started. - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts
+
 **Virtual Machine**
 > A virtual machine is a computer file, typically called an image, that behaves like an actual computer. In other words, creating a computer within a computer. It runs in a window, much like any other program, giving the end user the same experience on a virtual machine as they would have on the host operating system itself. The virtual machine is sandboxed from the rest of the system, meaning that the software inside a virtual machine can’t escape or tamper with the computer itself. This produces an ideal environment for testing other operating systems including beta releases, accessing virus-infected data, creating operating system backups, and running software or applications on operating systems they weren’t originally intended for. - https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/
 
@@ -736,8 +739,31 @@ asyncFoo( err => {
 </body>
 </html>
 ```
+> If you click the first button and then quickly click the second one, you'll see that the alert does not appear until the circles have finished being rendered. The first operation blocks the second one until it has finished running. Why is this? The answer is because JavaScript, generally speaking, is single threaded. At this point we need to introduce the concept of threads. - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts
 
+* An example of an asynchronous function
+```javascript
+const https = require('https');
+const URL = 'https://jsonplaceholder.typicode.com/todos/1';
 
+console.log('A');
+https.get(URL, (resp) => {
+  let data = '';
+  resp.on('data', (chunk) => {
+    data += chunk;
+  });
+  resp.on('end', () => {
+    console.log('B');
+  });
+}).on("error", (err) => {
+  console.log("Error: " + err.message);
+});
+console.log('C');
+
+>> A
+>> C
+>> B
+```
 
 * A synchronous callback
 ``` javascript
