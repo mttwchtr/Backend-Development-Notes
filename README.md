@@ -540,6 +540,8 @@ or from a .env file using the dotenv npm package.
 
 **nextTick()**
 >  which defers the execution of a function until the next pass of the event loop. Its functioning is very simple; it takes a callback as an argument and pushes it to the top of the event queue, in front of any pending I/O event, and returns immediately. The callback will then be invoked as soon as the event loop runs again. - s1
+
+> We guarantee that a callback is invoked asynchronously by deferring its execution using process.nextTick(). - s1
 ``` javascript
 const fs = require('fs');
 
