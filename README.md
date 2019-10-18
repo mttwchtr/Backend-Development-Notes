@@ -297,7 +297,29 @@ reader1.onDataReady(data => {
 
 ### Javascript > ES6
 
-**Const**
+**promise**
+> Essentially, a promise is a returned object to which you attach callbacks, instead of passing callbacks into a function. - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+
+> A promise must be in one of three states: pending, fulfilled, or rejected. - https://promisesaplus.com/
+
+**Promise.all**
+```javascript
+const foo = [
+  new Promise((resolve, reject) => setTimeout(resolve, 1, '🥝')),
+  new Promise((resolve, reject) => setTimeout(resolve, 1, '🍓')),
+  new Promise((resolve, reject) => setTimeout(resolve, 1, '🍍')),
+  new Promise((resolve, reject) => setTimeout(resolve, 1, '🍇'))
+];
+
+Promise.all(foo)
+  .then(console.log)
+  .catch(console.log);
+  
+>> [ '🥝', '🍓', '🍍', '🍇' ]
+```
+
+
+**const**
 * Allows user to make constant variables. 
 > const does not indicate that the assigned value will be constant, but that the binding with the value is constant. - s1
 ```javascript
