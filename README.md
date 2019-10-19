@@ -1,5 +1,13 @@
 # Backend Development Notes
 
+**TO LEARN**
+- git rebase
+- git fetch
+- guard pattern
+- ssh
+- kafka + node
+
+
 ## Sources
     - s1. Node Design Patterns, 2nd Edition, Mario Casciaro, Luciano Mammino
     - s2. Patterns of Enterprise Application Architecture, Martin Fowler
@@ -240,6 +248,38 @@ response.setHeader(“Content-Type”, “text/html”);
 ## Javascript
 
 ### JavaScript > Patterns
+
+**Guard Pattern**
+> Replace Nested Conditional with Guard Clauses -https://refactoring.com/catalog/replaceNestedConditionalWithGuardClauses.html
+From:
+```javascript
+function getPayAmount() {
+  let result;
+  if (isDead)
+    result = deadAmount();
+  else {
+    if (isSeparated)
+      result = separatedAmount();
+    else {
+      if (isRetired)
+        result = retiredAmount();
+      else
+        result = normalPayAmount();
+    }
+  }
+  return result;
+}
+```
+To:
+```javascript
+function getPayAmount() {
+  if (isDead) return deadAmount();
+  if (isSeparated) return separatedAmount();
+  if (isRetired) return retiredAmount();
+  return normalPayAmount();
+}
+```
+- code from https://refactoring.com/catalog/replaceNestedConditionalWithGuardClauses.html
 
 **Callback Pattern**
 
