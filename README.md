@@ -15,6 +15,7 @@
     - s4. Node.js 8 the Right Way, Jim R. Wilson
     - s5. JavaScript for Impatient Programmers, Dr. Axel Rauschmayer
     - s6. You Don't Know JS: Async & Performance, Kyle Simpson
+    - s7. Eloquent JavaScript, Marijn Haverbeke
 
 ## Programming
 
@@ -765,6 +766,8 @@ asyncFoo( err => {
 
 **initial use case**
 > Creating web services is what Node.js was made for, and that's still the dominant use case for it. - s4
+
+> Node was initially conceived for the purpose of making asynchronous programming easy and convenient. - s7
 
 **event-driven programming**
 > The core philosophy behind Node is that of event-driven programming. What that means for you, the programmer, is that you have to understand what events are available to you and how to respond to them. Many people are introduced to event-driven programming by implementing a user interface: the user clicks on something, and you handle the “click event.” - s3
