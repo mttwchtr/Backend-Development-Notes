@@ -6,6 +6,8 @@
 - guard pattern
 - ssh
 - kafka + node
+- docker
+- kubernetes
 
 
 ## Sources
