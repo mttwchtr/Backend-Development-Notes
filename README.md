@@ -95,6 +95,8 @@ copies a file to a destination
 cp node_modules/mocha/mocha.js public/vendor
 ```
 
+**., ./, ../**
+Pathnames that start with /, ./, or ../ are resolved relative to the current module’s path, where . stands for the current directory, ../ for one directory up, and / for the root of the file system. So if you ask for "./graph" from the file /tmp/robot/robot.js, Node will try to load the file /tmp/robot/graph.js. - s7
 
 
 ## Git
