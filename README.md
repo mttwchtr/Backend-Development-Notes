@@ -39,7 +39,19 @@
 **Virtual Machine**
 > A virtual machine is a computer file, typically called an image, that behaves like an actual computer. In other words, creating a computer within a computer. It runs in a window, much like any other program, giving the end user the same experience on a virtual machine as they would have on the host operating system itself. The virtual machine is sandboxed from the rest of the system, meaning that the software inside a virtual machine can’t escape or tamper with the computer itself. This produces an ideal environment for testing other operating systems including beta releases, accessing virus-infected data, creating operating system backups, and running software or applications on operating systems they weren’t originally intended for. - https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/
 
-## Programming > Terms
+**protocol**
+>  protocol is a convention or standard that controls or enables the connection, communication, and data transfer between computing endpoints. In its simplest form, a protocol can be defined as the rules governing the syntax, semantics, and synchronization of communication. Protocols may be implemented by hardware, software, or a combination of the two. At the lowest level, a protocol defines the behavior of a hardware connection. While protocols can vary greatly in purpose and sophistication, most specify one or more of the following properties:
+- Detection of the underlying physical connection (wired or wireless), or the existence of the other endpoint or node
+- Handshaking (dynamically setting parameters of a communications channel)
+- Negotiation of various connection characteristics
+- How to start and end a message
+- How to format a message
+- What to do with corrupted or improperly formatted messages (error correction)
+- How to detect unexpected loss of the connection, and what to do next
+- Termination of the session and or connection.
+
+from https://en.wikibooks.org/wiki/Network_Plus_Certification/Technologies/Common_Protocols
+
 
 **SDK**
 Software Development Kit
