@@ -3,7 +3,6 @@
 **TO LEARN**
 - git rebase
 - git fetch
-- guard pattern
 - ssh
 - kafka + node
 - docker
@@ -53,6 +52,9 @@
 from https://en.wikibooks.org/wiki/Network_Plus_Certification/Technologies/Common_Protocols
 
 
+**version control**
+> Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later. - https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
+
 **SDK**
 Software Development Kit
 > An SDK seems to be a complete set of APIs that allow you to perform most any action you would need to for creating applications. In addition an SDK may include other tools for developing for the platform/item that it is for. An API on the other hand is just a series of related methods that may be good for a specific purpose. As an example, the JDK (Java Development Kit) contains the API as well as the compilers, runtimes, and other miscellaneous tools. The Java API is simply all the libraries that make up the core language that you can work with out of the box. - https://softwareengineering.stackexchange.com/questions/101873/whats-the-difference-between-an-api-and-an-sdk
@@ -69,14 +71,14 @@ Software Development Kit
 **integration testing**
 >  tests the interaction between multiple components, or even the whole system - s4
 
-**Pattern**
+**pattern**
 > There’s no generally accepted definition of a pattern, but perhaps the best place to start is Christopher Alexander, an inspiration for many pattern enthusiasts: “Each pattern describes a problem which occurs over and over again in our environment, and then describes the core of the solution to that problem, in such a way that you can use this solution a million times over, without ever doing it the same way twice” [Alexander et al.]. - s2
 
-**Throughput**
+**throughput**
 > Throughput is how much stuff you can do in a given amount of time. If you’re timing the copying of a file, throughput might be measured in bytes per second. For enterprise applications a typical measure is transactions per second
 (tps), but the problem is that this depends on the complexity of your transaction. For your particular system you should pick a common set of transactions. - s2
 
-**Scalability**
+**scalability**
 > Scalability is a measure of how adding resources (usually hardware) affects performance. A scalable system is one that allows you to add hardware and get a commensurate performance improvement, such as doubling how many servers you have to double your throughput. Vertical scalability, or scaling up, means adding more power to a single server, such as more memory. Horizontal scalability, or scaling out, means adding more servers. - s2
 
 ## Programming >  Principles
