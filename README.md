@@ -992,6 +992,18 @@ myFunc();
 
 ### JavaScript > Vanilla > Features
 
+**encodeURIComponent**
+> ... characters such as /, :, and # that serve to separate the various components of a URI, are replaced with one or more hexadecimal escape sequences. https://www.oreilly.com/library/view/javascript-the-definitive/9781449393854/rn01re84.html
+
+> Use encodeURIComponent on user-entered fields from forms POST'd to the server. This will encode "&" symbols that may inadvertently be generated during data entry for special HTML entities or other characters that require encoding/decoding. For example, if a user writes "Jack & Jill", the text may get encoded as "Jack &amp; Jill". Without encodeURIComponent the ampersand could be interpretted on the server as the start of a new field and jeopardize the integrity of the data. > https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
+```javascript
+const nicknames = encodeURIComponent('Jack + Jill');
+let url = 'https://www.example.com?nicknames='
+url += nicknames;
+
+>> 'https://www.example.com?nicknames=Jack%20%2B%20Jill'
+```
+
 **setTimeOut**
 Can be used to simulate an asynchronous event
 
