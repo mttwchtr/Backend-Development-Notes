@@ -244,9 +244,16 @@ $ curl -H "Content-Type: application/json" https://api.github.com -v
 
 ### Web > HTTP
 
+**URI**
+>  is a string of characters that unambiguously identifies a particular resource.  - https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
+
+> Examples are: mailto:John.Doe@example.com, telnet://192.0.2.16:80/, https://example.com/path/resource.txt#fragment - https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
+
 **URL (Universal Resource Locator)**
 ![Anatomy of a URL](https://cascadingmedia.com/assets/images/insites/2015/02/url-anatomy/url-anatomy-55598c24.png)
 > image from https://cascadingmedia.com/insites/2015/02/url-anatomy-seo-tips.html
+
+> A Uniform Resource Locator (URL) is a URI that specifies the means of acting upon or obtaining the representation of a resource, i.e. specifying both its primary access mechanism and network location. For example, the URL http://example.org/wiki/Main_Page refers to a resource identified as /wiki/Main_Page, whose representation, in the form of HTML and related code, is obtainable via the Hypertext Transfer Protocol (http:) from a network host whose domain name is example.org. - https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
 
 ### Web > HTTP > Headers
 
