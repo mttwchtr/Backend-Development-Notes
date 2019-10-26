@@ -244,6 +244,10 @@ $ curl -H "Content-Type: application/json" https://api.github.com -v
 
 ### Web > HTTP
 
+**URL (Universal Resource Locator)**
+![Anatomy of a URL](https://cascadingmedia.com/assets/images/insites/2015/02/url-anatomy/url-anatomy-55598c24.png)
+> image from https://cascadingmedia.com/insites/2015/02/url-anatomy-seo-tips.html
+
 ### Web > HTTP > Headers
 
 > General headers - apply to both requests and responses, but with no relation to the data transmitted in the body.
