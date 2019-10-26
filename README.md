@@ -5,6 +5,7 @@
 - git fetch
 - ssh
 - kafka + node
+- https://blog.risingstack.com/node-js-security-checklist/
 - docker
 - kubernetes
 
@@ -123,6 +124,35 @@ node_modules
 
 # put any other files you don't want to check in here,
 # such as .DS_Store (OSX), *.bak, etc.
+```
+
+**stash**
+
+Places uncommitted changes into a holding area, and applies them to whatever branch you're on when you $ git stash apply.
+
+Can be used if you're on the wrong branch with uncommitted changes
+```bash
+git status
+{on branch master with uncommitted changes}
+git stash
+git checkout dev
+git stash apply
+{changes applied to dev branch}
+```
+
+**cherry pick**
+
+Moves a commit from one branch to another
+
+Can be used if you're on the wrong branch with committed changes
+```bash
+git status
+{on branch master with uncommitted changes}
+git log
+{commit f02b862a17d3942f0f95b8593e02035c01a835b0 (HEAD -> master)}
+git checkout dev
+git cherry-pick f02b862a17
+{commit added to dev branch}
 ```
 
 ## Web
