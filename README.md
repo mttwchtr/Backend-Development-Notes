@@ -274,6 +274,9 @@ $ curl -H "Content-Type: application/json" https://api.github.com -v
 
 ### Web > HTTP
 
+**Internet Media Types / MIME Types / Content Type**
+> The Content-Type header is critically important: without it, the client would have to painfully guess how to render the content. The format of the Content-Type header is an Internet media type, which consists of a type, subtype, and optional parameters. For example, text/html; charset=UTF-8 specifies a type of “text,” a subtype of “html,” and a character encoding of UTF-8. The Internet Assigned Numbers Authority maintains an official list of Internet media types. Often, you will hear “content type,” “Internet media type,” and “MIME type” used interchangeably. MIME (Multipurpose Internet Mail Extensions) was a precursor of Internet media types and, for the most part, is equivalent. - s3
+
 **URI**
 >  is a string of characters that unambiguously identifies a particular resource.  - https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
 
@@ -299,6 +302,12 @@ $ curl -H "Content-Type: application/json" https://api.github.com -v
 response.setHeader(“Content-Type”, “text/html”);
 ```
 - https://codeburst.io/all-about-http-in-node-js-and-3-best-ways-for-http-requests-in-web-development-6e5b6876c3a4
+
+> Note that the browser will respect the Content-Type header regardless of what the URL path is. So you could serve HTML from a path of /image.jpg or an image from a path of /text.html.  - s3
+
+> The Content-Type header is critically important: without it, the client would have to painfully guess how to render the content. - s3
+
+
 
 
 ## Database
