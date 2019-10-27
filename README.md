@@ -9,6 +9,7 @@
 - docker
 - kubernetes
 - base 64 encoding
+- http vs https
 
 
 ## Sources
