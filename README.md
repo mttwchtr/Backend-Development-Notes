@@ -8,6 +8,7 @@
 - https://blog.risingstack.com/node-js-security-checklist/
 - docker
 - kubernetes
+- base 64 encoding
 
 
 ## Sources
@@ -307,8 +308,7 @@ response.setHeader(“Content-Type”, “text/html”);
 
 > The Content-Type header is critically important: without it, the client would have to painfully guess how to render the content. - s3
 
-
-
+> Summary; if you have binary (non-alphanumeric) data (or a significantly sized payload) to transmit, use multipart/form-data. Otherwise, use application/x-www-form-urlencoded. The MIME types you mention are the two Content-Type headers for HTTP POST requests that user-agents (browsers) must support. The purpose of both of those types of requests is to send a list of name/value pairs to the server. Depending on the type and amount of data being transmitted, one of the methods will be more efficient than the other. - https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data
 
 ## Database
 
