@@ -276,6 +276,18 @@ $ curl -H "Content-Type: application/json" https://api.github.com -v
 
 ### Web > HTTP
 
+**XMLHttpRequest (XHR)**
+> Use XMLHttpRequest (XHR) objects to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing. XMLHttpRequest is used heavily in AJAX programming. Despite its name, XMLHttpRequest can be used to retrieve any type of data, not just XML. - https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+
+**ajax (Asynchronous JavaScript and XML)**
+> The term Ajax has come to represent a broad group of Web technologies that can be used to implement a Web application that communicates with a server in the background, without interfering with the current state of the page. In the article that coined the term Ajax, Jesse James Garrett explained that the following technologies are incorporated:
+- HTML (or XHTML) and CSS for presentation
+- The Document Object Model (DOM) for dynamic display of and interaction with data
+- JSON or XML for the interchange of data, and XSLT for its manipulation
+- The XMLHttpRequest object for asynchronous communication
+- JavaScript to bring these technologies together
+> https://en.wikipedia.org/wiki/Ajax_(programming)
+
 **Internet Media Types / MIME Types / Content Type**
 > The Content-Type header is critically important: without it, the client would have to painfully guess how to render the content. The format of the Content-Type header is an Internet media type, which consists of a type, subtype, and optional parameters. For example, text/html; charset=UTF-8 specifies a type of “text,” a subtype of “html,” and a character encoding of UTF-8. The Internet Assigned Numbers Authority maintains an official list of Internet media types. Often, you will hear “content type,” “Internet media type,” and “MIME type” used interchangeably. MIME (Multipurpose Internet Mail Extensions) was a precursor of Internet media types and, for the most part, is equivalent. - s3
 
