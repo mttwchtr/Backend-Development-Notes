@@ -3,6 +3,9 @@
 **TO LEARN**
 - git rebase
 - git fetch
+- git as a graph
+- memory leaks in JS
+- cookies vs. sessions
 - ssh
 - kafka + node
 - https://blog.risingstack.com/node-js-security-checklist/
@@ -10,7 +13,6 @@
 - kubernetes
 - base 64 encoding
 - http vs https
-
 
 ## Sources
     - s1. Node Design Patterns, 2nd Edition, Mario Casciaro, Luciano Mammino
