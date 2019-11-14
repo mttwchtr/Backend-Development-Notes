@@ -9,7 +9,6 @@
 - ssh
 - kafka + node
 - https://blog.risingstack.com/node-js-security-checklist/
-- docker
 - kubernetes
 - base 64 encoding
 - http vs https
@@ -27,8 +26,26 @@
 
 ### Programming > Tools
 
+### Programming > Tools > Homebrew
+
 **homebrew**
 > BSD UNIX, of which Darwin or OS X is a derivative, does not have a built-in package manager like aptitude, which is why Homebrew calls itself the “missing package manager.” Homebrew is one of several package managers for OS X, including MacPorts and Fink. Most of the popular UNIX software packages are available to be installed through Homebrew and those that aren't can be made available through some configuration in Ruby. - https://www.quora.com/What-is-Homebrew-for-macOS
+
+### Programming > Tools > Docker
+
+**docker**
+Docker is a software platform that allows you to build, test, and deploy applications quickly. Docker packages software into standardized units called containers that have everything the software needs to run including libraries, system tools, code, and runtime. - https://aws.amazon.com/docker/
+
+**docker image**
+> A Docker image is a private filesystem, just for your container. It provides all the files and code your container will need. - https://hub.docker.com/?overlay=onboarding
+
+
+**docker build**
+> Running the docker build command creates a Docker image using the Dockerfile. This built image is in your machine's local Docker image registry. - https://hub.docker.com/?overlay=onboarding
+
+**docker run**
+Running a container launches your software with private resources, securely isolated from the rest of your machine. - https://hub.docker.com/?overlay=onboarding
+
 
 ### Programming > Patterns
 
