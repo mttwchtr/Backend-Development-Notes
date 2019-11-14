@@ -6,6 +6,7 @@
 - git as a graph
 - memory leaks in JS
 - cookies vs. sessions
+- package-lock.json
 - ssh
 - kafka + node
 - https://blog.risingstack.com/node-js-security-checklist/
