@@ -412,6 +412,52 @@ const getFile = (fileName) => {
 ```
 Definition and code from https://nodejs.dev/learn/understanding-javascript-promises
 
+** Promise Chaining**
+```
+const one = () => {
+  return new Promise((resolve, reject) => {
+    return setTimeout(() => {
+      console.log('num in one is ', 1);
+      resolve(1);
+    }, 1000);
+  })
+}
+
+const two = (num) => {
+  return new Promise((resolve, reject) => {
+    return setTimeout(() => {
+      console.log('num in two is ', num + 1);
+      resolve(num + 1);
+    }, 1000);
+  })
+}
+
+const three = (num) => {
+  return new Promise((resolve, reject) => {
+    return setTimeout(() => {
+      console.log('num in three is ', num + 1);
+      resolve(num + 1);
+    }, 1000);
+  })
+}
+
+one()
+  .then(two) 
+  .then(three)
+  .then(data => console.log('completed returning', data));
+```
+Outputs
+```
+num in one is  1
+num in two is  2
+num in three is  3
+completed returning 3
+```
+  
+  
+  
+  
+
 **Guard Pattern**
 > Replace Nested Conditional with Guard Clauses -https://refactoring.com/catalog/replaceNestedConditionalWithGuardClauses.html
 From:
