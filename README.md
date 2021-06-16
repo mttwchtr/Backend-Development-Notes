@@ -395,6 +395,23 @@ response.setHeader(“Content-Type”, “text/html”);
 
 ### JavaScript > Patterns
 
+** Promisifying **
+> This technique is a way to be able to use a classic JavaScript function that takes a callback, and have it return a promise
+```
+const getFile = (fileName) => {
+  return new Promise((resolve, reject) => {
+    fs.readFile(fileName, (err, data) => {
+      if (err) {
+        reject(err)
+        return
+      }
+      resolve(data)
+    })
+  })
+}
+```
+Definition and code from https://nodejs.dev/learn/understanding-javascript-promises
+
 **Guard Pattern**
 > Replace Nested Conditional with Guard Clauses -https://refactoring.com/catalog/replaceNestedConditionalWithGuardClauses.html
 From:
@@ -487,6 +504,8 @@ reader1.onDataReady(data => {
 > Essentially, a promise is a returned object to which you attach callbacks, instead of passing callbacks into a function. - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
 
 > A promise must be in one of three states: pending, fulfilled, or rejected. - https://promisesaplus.com/
+
+Once a promise has been called, it will start in a pending state. This means that the calling function continues executing, while the promise is pending until it resolves, giving the calling function whatever data was being requested. The created promise will eventually end in a resolved state, or in a rejected state, calling the respective callback functions (passed to then and catch) upon finishing. Using resolve and reject, we can communicate back to the caller what the resulting promise state was, and what to do with it. - https://nodejs.dev/learn/understanding-javascript-promises
 
 **Promise.all**
 ```javascript
@@ -755,6 +774,8 @@ process.on('exit', (code) => {
 
 **nextTick()**
 >  which defers the execution of a function until the next pass of the event loop. Its functioning is very simple; it takes a callback as an argument and pushes it to the top of the event queue, in front of any pending I/O event, and returns immediately. The callback will then be invoked as soon as the event loop runs again. - s1
+
+> Calling setTimeout(() => {}, 0) will execute the function at the end of next tick, much later than when using nextTick() which prioritizes the call and executes it just before the beginning of the next tick. Use nextTick() when you want to make sure that in the next event loop iteration that code is already executed. - https://nodejs.dev/learn/understanding-process-nexttick
 
 > We guarantee that a callback is invoked asynchronously by deferring its execution using process.nextTick(). - s1
 ``` javascript
