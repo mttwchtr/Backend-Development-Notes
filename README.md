@@ -729,13 +729,6 @@ assert.equal(7 + 1, 6);
 ```
 
 
-**extname**
-```javascript
-path.extname('index.html');
-
->> '.html'
-```
-
 ### JavaScript > Node > Libraries > process
 
 **env**
@@ -745,6 +738,20 @@ Can be called from the terminal:
 PORT=8626 NODE_ENV=development node server.js
 ```
 or from a .env file using the dotenv npm package.
+
+** on **
+
+```
+process.on('exit', (code) => {
+  console.log(`About to exit with code: ${code}`);
+});
+
+> About to exit with code: 0
+```
+
+** exit codes**
+> Node.js will normally exit with a 0 status code when no more async operations are pending. 
+> 1 Uncaught Fatal Exception: There was an uncaught exception, and it was not handled by a domain or an 'uncaughtException' event handler. - https://nodejs.org/api/process.html#process_exit_codes
 
 **nextTick()**
 >  which defers the execution of a function until the next pass of the event loop. Its functioning is very simple; it takes a callback as an argument and pushes it to the top of the event queue, in front of any pending I/O event, and returns immediately. The callback will then be invoked as soon as the event loop runs again. - s1
@@ -935,11 +942,17 @@ asyncFoo( err => {
 **Asynchronous vs. Synchronous**
 > A JavaScript program is (practically) always broken up into two or more chunks, where the first chunk runs now and the next chunk runs later, in response to an event. Even though the program is executed chunk-by-chunk, all of them share the same access to the program scope and state, so each modification to state is made on top of the previous state. Whenever there are events to run, the event loop runs until the queue is empty. Each iteration of the event loop is a "tick." User interaction, IO, and timers enqueue events on the event queue. At any given moment, only one event can be processed from the queue at a time. While an event is executing, it can directly or indirectly cause one or more subsequent events. Concurrency is when two or more chains of events interleave over time, such that from a high-level perspective, they appear to be running simultaneously (even though at any given moment only one event is being processed). - s6
 
-> In its most basic form, JavaScript is a synchronous, blocking, single-threaded language, in which only one operation can be in progress at a time. - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing
+ ** Single-Threaded**   
+    
+> The Node.js JavaScript code runs on a single thread. There is just one thing happening at a time. This is a limitation that's actually very helpful, as it simplifies a lot how you program without worrying about concurrency issues. You just need to pay attention to how you write your code and avoid anything that could block the thread, like synchronous network calls or infinite loops. - https://nodejs.dev/learn/the-nodejs-event-loop
 
+> In its most basic form, JavaScript is a synchronous, blocking, single-threaded language, in which only one operation can be in progress at a time. - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing    
+    
 > If we're running an operation that takes time however, like querying a database and using the results to populate templates, it is better to push this off the main thread and complete the task asynchronously - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing
 
-
+** Blocking the Thread **
+    
+Any JavaScript code that takes too long to return back control to the event loop will block the execution of any JavaScript code in the page, even block the UI thread, and the user cannot click around, scroll the page, and so on. Almost all the I/O primitives in JavaScript are non-blocking. Network requests, filesystem operations, and so on. Being blocking is the exception, and this is why JavaScript is based so much on callbacks, and more recently on promises and async/await. - https://nodejs.dev/learn/the-nodejs-event-loop
 
 * An example of synchronous blocking code, adapted from s5
 ```HTML
@@ -1012,6 +1025,7 @@ console.log('after');
 >> Result: 3
 >> after
 ```
+
 * An asynchronous callback
 ``` javascript
 function additionAsync(a, b, callback) {
