@@ -76,6 +76,20 @@ The following example downloads from here: https://hub.docker.com/r/docker/whale
 
 ### Programming > Concepts
 
+** process **
+> A process is an executing (i.e., running) instance of a program. Processes are also frequently referred to as tasks. - http://www.linfo.org/process.html
+
+** program / executable file **
+> A program is an executable file that is held in storage. Storage refers to devices or media that can retain data for relatively long periods of time (e.g., years or even decades), such as hard disk drives (HDDs), optical disks and magnetic tape. This contrasts with memory, whose contents can be accessed (i.e., read and written to) at extremely high speeds but which are retained only temporarily (i.e., while in use or only as long as the power supply remains on).
+
+An executable file is a binary file (i.e., a file at least part of which is not plain text) that has been compiled (i.e., converted using a special type of program called a compiler) from source code into machine machine code, which is a pattern of bytes that can be read directly by a central processing unit (CPU). Source code is the version of software as it is originally written (i.e., typed into a computer) by a human in plain text (i.e., human readable alphanumeric characters). A CPU is the main logic unit of a computer. - http://www.linfo.org/process.html
+
+** shell **
+> A shell is a program that provides the traditional, text-only user interface for Unix-like operating systems. Its primary function is to read commands that are typed into a console (i.e., an all-text display mode) or terminal window (an all-text window in a GUI) and then execute (i.e., run) them. A command is an instruction telling a computer to do something, such as start a program. - http://www.linfo.org/process.html
+
+** PID **
+> In Unix-like operating systems, each process is given a unique number, referred to as a process identification (PID), when it is created, and this number is used by the system to reference the process. Each process is guaranteed to have a unique PID, which is always a non-negative integer. - http://www.linfo.org/process.html
+
 **thread**
 > A thread is basically a single process that a program can use to complete tasks. Each thread can only do a single task at once: Task A --> Task B --> Task C. Each task will be run sequentially; a task has to complete before the next one can be started. - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts
 
@@ -155,6 +169,15 @@ cp node_modules/mocha/mocha.js public/vendor
 
 **., ./, ../**
 Pathnames that start with /, ./, or ../ are resolved relative to the current module’s path, where . stands for the current directory, ../ for one directory up, and / for the root of the file system. So if you ask for "./graph" from the file /tmp/robot/robot.js, Node will try to load the file /tmp/robot/graph.js. - s7
+
+** ps **
+> The ps command is used to list the currently running processes and their PIDs. - http://www.linfo.org/process.html
+```
+$ ps
+  PID TTY           TIME CMD
+    1 ??        30:26.72 /sbin/launchd
+   62 ??         0:54.92 /usr/sbin/syslogd
+```
 
 
 ## Git
