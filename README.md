@@ -47,6 +47,27 @@ Docker is a software platform that allows you to build, test, and deploy applica
 **docker run**
 Running a container launches your software with private resources, securely isolated from the rest of your machine. - https://hub.docker.com/?overlay=onboarding
 
+If no image can be found locally, one is downloaded from dockerhub and then run.
+The following example downloads from here: https://hub.docker.com/r/docker/whalesay/
+```
+ docker run docker/whalesay cowsay Hello World
+ _____________ 
+< Hello World >
+ ------------- 
+    \
+     \
+      \     
+                    ##        .            
+              ## ## ##       ==            
+           ## ## ## ##      ===            
+       /""""""""""""""""___/ ===        
+  ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~   
+       \______ o          __/            
+        \    \        __/             
+          \____\______/   
+
+```
+
 
 ### Programming > Patterns
 
@@ -164,7 +185,7 @@ git stash apply
 
 **cherry pick**
 
-Moves a commit from one branch to another
+Copies a commit from one branch to another
 
 Can be used if you're on the wrong branch with committed changes
 ```bash
@@ -751,6 +772,8 @@ const port = 3000;
 
 const requestHandler = (request, response) => {
   console.log(request.url)
+  res.statusCode = 200
+  res.setHeader('Content-Type', 'text/plain')
   response.end('Hello Node.js Server!')
 }
 
