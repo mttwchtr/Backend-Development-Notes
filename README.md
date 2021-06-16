@@ -1000,7 +1000,17 @@ new event from the queue to be processed. - s3
 
 ### Javascript > Node > Features
 
-**__dirname**
+**__dirname and __filename**
+>  __filename and __dirname are used to get the filename and directory name of the currently executing file. - https://www.geeksforgeeks.org/difference-between-__dirname-and-in-node-js/
+
+```
+console.log("__dirname:    ", __dirname);
+console.log("filename: ", __filename);
+> __dirname:     /Users/mwaechter/Desktop/express_test
+> filename:  /Users/mwaechter/Desktop/express_test/app.js
+```
+- code from https://www.geeksforgeeks.org/difference-between-__dirname-and-in-node-js/
+    
 > \_\_dirname will resolve to the directory the executing script resides in. So if your script resides in /home/sites/app.js, \_\_dirname will resolve to /home/sites. It’s a good idea to use this handy global whenever possible. Failing to do so can cause hard-to-diagnose errors if you run your app from a different directory. - s3
 ```javascript
 fs.readFile(__dirname + '/cat.txt', function(err, data) {
@@ -1010,6 +1020,20 @@ fs.readFile(__dirname + '/cat.txt', function(err, data) {
      onsole.log(data)
   }
 ```
+    
+    
+    
+    
+### Javascript > Node > Express
+> To serve static files such as images, CSS files, and JavaScript files, use the express.static built-in middleware function in Express. - https://expressjs.com/en/starter/static-files.html
+    
+```
+app.use(express.static(path.join(__dirname, 'public')));
+{Add a file called hello_world.jpeg to public/images}
+$ npm start
+{Navigate to http://localhost:3000/images/hello_world.jpeg in your browser. The image will be displayed}
+```
+    
 
 ### Javascript > Vanilla
 
@@ -1059,8 +1083,6 @@ sayHi();
 
 >>  "Hello, World!"
 ```
-
-
 
 **Falsey**
 - false
