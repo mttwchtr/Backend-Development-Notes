@@ -453,10 +453,6 @@ num in two is  2
 num in three is  3
 completed returning 3
 ```
-  
-  
-  
-  
 
 **Guard Pattern**
 > Replace Nested Conditional with Guard Clauses -https://refactoring.com/catalog/replaceNestedConditionalWithGuardClauses.html
@@ -553,6 +549,11 @@ reader1.onDataReady(data => {
 
 Once a promise has been called, it will start in a pending state. This means that the calling function continues executing, while the promise is pending until it resolves, giving the calling function whatever data was being requested. The created promise will eventually end in a resolved state, or in a rejected state, calling the respective callback functions (passed to then and catch) upon finishing. Using resolve and reject, we can communicate back to the caller what the resulting promise state was, and what to do with it. - https://nodejs.dev/learn/understanding-javascript-promises
 
+
+** UnhandledPromiseRejectionWarning **
+This means that a promise you called rejected, but there was no catch used to handle the error. Add a catch after the offending then to handle this properly. - https://nodejs.dev/learn/understanding-javascript-promises
+
+
 **Promise.all**
 ```javascript
 const foo = [
@@ -569,6 +570,28 @@ Promise.all(foo)
 >> [ '🥝', '🍓', '🍍', '🍇' ]
 ```
 
+
+** async **
+
+Prepending the async keyword to any function means that the function will return a promise. Even if it's not doing so explicitly, it will internally make it return a promise.
+```
+const aFunction = async () => {
+  return 'test'
+}
+
+aFunction().then(alert) // This will alert 'test'
+```
+and it's the same as:
+```
+const aFunction = () => {
+  return Promise.resolve('test')
+}
+
+aFunction().then(alert) // This will alert 'test'
+```
+- Definition and code from https://nodejs.dev/learn/modern-asynchronous-javascript-with-async-and-await
+
+This
 
 **const**
 * Allows user to make constant variables. 
@@ -1131,13 +1154,11 @@ fs.readFile(__dirname + '/cat.txt', function(err, data) {
   if (err) {
     console.log(err)
   } else {
-     onsole.log(data)
+     console.log(data)
   }
 ```
     
-    
-    
-    
+ 
 ### Javascript > Node > Express
 > To serve static files such as images, CSS files, and JavaScript files, use the express.static built-in middleware function in Express. - https://expressjs.com/en/starter/static-files.html
     
