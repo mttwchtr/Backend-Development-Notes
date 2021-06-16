@@ -1306,7 +1306,14 @@ catch(e) {
 >> Error: Parameter is not a number!
 ```
 
-
+ ** .prototype **
+ > So what exactly is prototype in JavaScript? Well, simply put, every function in JavaScript has a prototype property that references an object. Anticlimactic, right? Test it out for yourself. Again, prototype is just a property that every function in JavaScript has and, as we saw above, it allows us to share methods across all instances of a function.  - https://ui.dev/beginners-guide-to-javascript-prototype/
+    
+    
+** Object.create **
+> Object.create. Simply put, Object.create allows you to create an object which will delegate to another object on failed lookups. - https://ui.dev/beginners-guide-to-javascript-prototype/
+    
+    
 **this**
 > refer to the current object. - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
 ```javacript
