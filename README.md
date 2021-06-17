@@ -210,7 +210,7 @@ Don't Repeat Yourself
 > REST stands for REpresentational State Transfer. It means when a RESTful API is called, the server will transfer to the client a representation of the state of the requested resource. - https://medium.com/extend/what-is-rest-a-simple-explanation-for-beginners-part-1-introduction-b4a072f8740f
 
 
-## Bash
+## Shell
 
 **mkdir**
 makes a directory
@@ -236,6 +236,25 @@ $ ps
    62 ??         0:54.92 /usr/sbin/syslogd
 ```
 
+**touch**
+creates a file
+```
+ touch first.sh
+```
+
+**Create and Run a Shell File**
+``` 
+$ touch first.sh
+$ nano first.sh
+{Enter the following}
+#!/bin/sh
+echo Hello World
+{Save the file and exit}
+$  chmod 755 first.sh
+$ ./first.sh
+{outputs Hello World}
+```
+- https://www.shellscript.sh/first.html
 
 ## Git
 
