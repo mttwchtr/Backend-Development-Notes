@@ -27,6 +27,26 @@
 
 ### Programming > Tools
 
+### Programming > Tools > ssh
+
+> SSH, or Secure Shell, is a remote administration protocol that allows users to control and modify their remote servers over the Internet. It uses cryptographic techniques to ensure that all communication to and from the remote server happens in an encrypted manner. It provides a mechanism for authenticating a remote user, transferring inputs from the client to the host, and relaying the output back to the client.It uses port 22 and communicate over TCP protocol.
+The SSH command consists of 3 distinct parts:
+ssh {user}@{host}
+{user} represents the account you want to access.
+{host} refers to the computer you want to access. This can be an IP Address or a domain name
+ssh ubuntu@x.x.x.x or ssh ubuntu@test.com
+- https://schh.medium.com/ssh-for-dummies-ea168e6ff547
+
+**Steps to get set up**
+Step 1 : Generate the client’s keyPairs
+ssh-keygen -t rsa -b 2048 -C "client@example.com"
+The client’s public and private key will be stored in ssh/id_rsa.pub and ssh/id_rsa respectively
+Step 2 : The admin system should copy the client’s public key to the remote server in .ssh/authorized_keys file
+ssh-copy-id -f -i id_rsa.pub ubuntu@x.x.x.x
+Step 3 : The client can then connect to the remote server
+ssh ubuntu@x.x.x.x
+- https://schh.medium.com/ssh-for-dummies-ea168e6ff547
+
 ### Programming > Tools > Nomad
 
 > Running containers in production is tough. You don’t want to log into a machine and simply run a docker run or docker-compose up. Why not? Well, what happens if the containers die? How do you scale across several machines? Container orchestration solves this problem. Tools like Kubernetes, Swarm, Nomad, and ECS all help solve this problem, all in slightly different ways. The general idea is that you have “managers” who receive expected state. This state might be “I want to run two instances of my web app and expose port 80.” The managers then look at all of the machines in the cluster and delegate work to “worker” nodes. The managers watch for changes (such as a container quitting) and then work to make actual state reflect the expected state. - https://docs.docker.com/get-started/11_what_next/
