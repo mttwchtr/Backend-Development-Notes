@@ -38,13 +38,13 @@ ssh ubuntu@x.x.x.x or ssh ubuntu@test.com
 - https://schh.medium.com/ssh-for-dummies-ea168e6ff547
 
 **Steps to get set up**
-Step 1 : Generate the client’s keyPairs
-ssh-keygen -t rsa -b 2048 -C "client@example.com"
-The client’s public and private key will be stored in ssh/id_rsa.pub and ssh/id_rsa respectively
-Step 2 : The admin system should copy the client’s public key to the remote server in .ssh/authorized_keys file
-ssh-copy-id -f -i id_rsa.pub ubuntu@x.x.x.x
-Step 3 : The client can then connect to the remote server
-ssh ubuntu@x.x.x.x
+> Step 1 : Generate the client’s keyPairs
+> ssh-keygen -t rsa -b 2048 -C "client@example.com"
+> The client’s public and private key will be stored in ssh/id_rsa.pub and ssh/id_rsa respectively
+> Step 2 : The admin system should copy the client’s public key to the remote server in .ssh/authorized_keys file
+> ssh-copy-id -f -i id_rsa.pub ubuntu@x.x.x.x
+> Step 3 : The client can then connect to the remote server
+> ssh ubuntu@x.x.x.x
 - https://schh.medium.com/ssh-for-dummies-ea168e6ff547
 
 ### Programming > Tools > Nomad
