@@ -22,6 +22,57 @@
     - s5. JavaScript for Impatient Programmers, Dr. Axel Rauschmayer
     - s6. You Don't Know JS: Async & Performance, Kyle Simpson
     - s7. Eloquent JavaScript, Marijn Haverbeke
+    - s8. Computer Systems: A Programmer's Perspective, 3rd Edition, Randal E. Bryant, Carnegie Mellon University
+
+David R. O'Hallaron, Carnegie Mellon University
+
+## Computing
+
+**buses**
+> Running throughout the system is a collection of electrical conduits calledbuses that carry bytes of information back and forth between the components. Buses are typically designed to transfer fixed-sized chunksof bytes known as words. The number of bytes in a word (theword size) is a fundamental system parameterthat varies across systems.  Most machines today have word sizes of either 4 bytes (32 bits) or 8 bytes (64bits). - s8
+
+**I/O**
+> Input/output (I/O) devices are the system’s connection to the external world.  Our example system has fourI/O devices: a keyboard and mouse for user input, a display for user output, and a disk drive (or simply disk)for long-term storage of data and programs. - s8
+
+
+### Computing > Concepts
+
+
+
+** process **
+> A process is an executing (i.e., running) instance of a program. Processes are also frequently referred to as tasks. - http://www.linfo.org/process.html
+
+** program / executable file **
+> A program is an executable file that is held in storage. Storage refers to devices or media that can retain data for relatively long periods of time (e.g., years or even decades), such as hard disk drives (HDDs), optical disks and magnetic tape. This contrasts with memory, whose contents can be accessed (i.e., read and written to) at extremely high speeds but which are retained only temporarily (i.e., while in use or only as long as the power supply remains on).
+
+An executable file is a binary file (i.e., a file at least part of which is not plain text) that has been compiled (i.e., converted using a special type of program called a compiler) from source code into machine machine code, which is a pattern of bytes that can be read directly by a central processing unit (CPU). Source code is the version of software as it is originally written (i.e., typed into a computer) by a human in plain text (i.e., human readable alphanumeric characters). A CPU is the main logic unit of a computer. - http://www.linfo.org/process.html
+
+** shell **
+> A shell is a program that provides the traditional, text-only user interface for Unix-like operating systems. Its primary function is to read commands that are typed into a console (i.e., an all-text display mode) or terminal window (an all-text window in a GUI) and then execute (i.e., run) them. A command is an instruction telling a computer to do something, such as start a program. - http://www.linfo.org/process.html
+
+** PID **
+> In Unix-like operating systems, each process is given a unique number, referred to as a process identification (PID), when it is created, and this number is used by the system to reference the process. Each process is guaranteed to have a unique PID, which is always a non-negative integer. - http://www.linfo.org/process.html
+
+**thread**
+> A thread is basically a single process that a program can use to complete tasks. Each thread can only do a single task at once: Task A --> Task B --> Task C. Each task will be run sequentially; a task has to complete before the next one can be started. - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts
+
+**Virtual Machine**
+> A virtual machine is a computer file, typically called an image, that behaves like an actual computer. In other words, creating a computer within a computer. It runs in a window, much like any other program, giving the end user the same experience on a virtual machine as they would have on the host operating system itself. The virtual machine is sandboxed from the rest of the system, meaning that the software inside a virtual machine can’t escape or tamper with the computer itself. This produces an ideal environment for testing other operating systems including beta releases, accessing virus-infected data, creating operating system backups, and running software or applications on operating systems they weren’t originally intended for. - https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/
+
+**protocol**
+>  protocol is a convention or standard that controls or enables the connection, communication, and data transfer between computing endpoints. In its simplest form, a protocol can be defined as the rules governing the syntax, semantics, and synchronization of communication. Protocols may be implemented by hardware, software, or a combination of the two. At the lowest level, a protocol defines the behavior of a hardware connection. While protocols can vary greatly in purpose and sophistication, most specify one or more of the following properties:
+- Detection of the underlying physical connection (wired or wireless), or the existence of the other endpoint or node
+- Handshaking (dynamically setting parameters of a communications channel)
+- Negotiation of various connection characteristics
+- How to start and end a message
+- How to format a message
+- What to do with corrupted or improperly formatted messages (error correction)
+- How to detect unexpected loss of the connection, and what to do next
+- Termination of the session and or connection.
+
+from https://en.wikibooks.org/wiki/Network_Plus_Certification/Technologies/Common_Protocols
+
+
 
 ## Programming
 
@@ -132,40 +183,6 @@ The following example downloads from here: https://hub.docker.com/r/docker/whale
 > In short, the microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies. - https://martinfowler.com/microservices/
 
 ### Programming > Concepts
-
-** process **
-> A process is an executing (i.e., running) instance of a program. Processes are also frequently referred to as tasks. - http://www.linfo.org/process.html
-
-** program / executable file **
-> A program is an executable file that is held in storage. Storage refers to devices or media that can retain data for relatively long periods of time (e.g., years or even decades), such as hard disk drives (HDDs), optical disks and magnetic tape. This contrasts with memory, whose contents can be accessed (i.e., read and written to) at extremely high speeds but which are retained only temporarily (i.e., while in use or only as long as the power supply remains on).
-
-An executable file is a binary file (i.e., a file at least part of which is not plain text) that has been compiled (i.e., converted using a special type of program called a compiler) from source code into machine machine code, which is a pattern of bytes that can be read directly by a central processing unit (CPU). Source code is the version of software as it is originally written (i.e., typed into a computer) by a human in plain text (i.e., human readable alphanumeric characters). A CPU is the main logic unit of a computer. - http://www.linfo.org/process.html
-
-** shell **
-> A shell is a program that provides the traditional, text-only user interface for Unix-like operating systems. Its primary function is to read commands that are typed into a console (i.e., an all-text display mode) or terminal window (an all-text window in a GUI) and then execute (i.e., run) them. A command is an instruction telling a computer to do something, such as start a program. - http://www.linfo.org/process.html
-
-** PID **
-> In Unix-like operating systems, each process is given a unique number, referred to as a process identification (PID), when it is created, and this number is used by the system to reference the process. Each process is guaranteed to have a unique PID, which is always a non-negative integer. - http://www.linfo.org/process.html
-
-**thread**
-> A thread is basically a single process that a program can use to complete tasks. Each thread can only do a single task at once: Task A --> Task B --> Task C. Each task will be run sequentially; a task has to complete before the next one can be started. - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Concepts
-
-**Virtual Machine**
-> A virtual machine is a computer file, typically called an image, that behaves like an actual computer. In other words, creating a computer within a computer. It runs in a window, much like any other program, giving the end user the same experience on a virtual machine as they would have on the host operating system itself. The virtual machine is sandboxed from the rest of the system, meaning that the software inside a virtual machine can’t escape or tamper with the computer itself. This produces an ideal environment for testing other operating systems including beta releases, accessing virus-infected data, creating operating system backups, and running software or applications on operating systems they weren’t originally intended for. - https://azure.microsoft.com/en-us/overview/what-is-a-virtual-machine/
-
-**protocol**
->  protocol is a convention or standard that controls or enables the connection, communication, and data transfer between computing endpoints. In its simplest form, a protocol can be defined as the rules governing the syntax, semantics, and synchronization of communication. Protocols may be implemented by hardware, software, or a combination of the two. At the lowest level, a protocol defines the behavior of a hardware connection. While protocols can vary greatly in purpose and sophistication, most specify one or more of the following properties:
-- Detection of the underlying physical connection (wired or wireless), or the existence of the other endpoint or node
-- Handshaking (dynamically setting parameters of a communications channel)
-- Negotiation of various connection characteristics
-- How to start and end a message
-- How to format a message
-- What to do with corrupted or improperly formatted messages (error correction)
-- How to detect unexpected loss of the connection, and what to do next
-- Termination of the session and or connection.
-
-from https://en.wikibooks.org/wiki/Network_Plus_Certification/Technologies/Common_Protocols
-
 
 **version control / Version Control System (VCS)**
 > Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later. - https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
