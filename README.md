@@ -663,6 +663,37 @@ Promise.all(foo)
 >> [ '🥝', '🍓', '🍍', '🍇' ]
 ```
 
+**Synchronous Loop**
+
+A loop that waits between iterations
+```
+const waityLoop = async () => { 
+ const rows = [1, 2, 3, 4, 5];
+  for (const row of rows) {
+    await waity(row);
+  }
+  console.log('done');
+}
+
+const waity = (row) => {
+  return new Promise((resolve, reject) => {
+    return setTimeout(() => {
+      console.log(row);
+      resolve();
+    }, 1000);
+  });
+}
+
+waityLoop();
+
+>> 1
+>> 2
+>> 3
+>> 4
+>> 5
+>> done
+```
+
 
 ** async **
 
