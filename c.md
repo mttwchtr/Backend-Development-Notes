@@ -13,6 +13,13 @@ Comment
 ## \n
 > the newline character, which when printed advances the output to the left margin on the next line - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
+## \#define
+Symbolic Constant
+> A #define line defines a symbolic name or symbolic constant to be a particular string of characters  - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
+```c
+#define LOWER 1
+#define UPPER 1000
+```
 
 # Definitions
 
