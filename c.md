@@ -32,6 +32,29 @@ Symbolic Constant
 ## Program
 > A C program, whatever its size, consists of functions and variables. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
+# Concepts
+
+## ASCII
+> In C programming, a character variable holds ASCII value (an integer number between 0 and 127) rather than that character itself. This integer value is the ASCII code of the character. For example, the ASCII value of 'A' is 65. What this means is that, if you assign 'A' to a character variable, 65 is stored in the variable rather than 'A' itself. - https://www.programiz.com/c-programming/examples/ASCII-value-character
+```c
+#include <stdio.h>
+main()
+{
+   int c;
+   c = getchar();
+   while (c != 10) {
+       printf("%d\n", c);
+       c = getchar();
+   }
+} 
+
+$ ./a.out
+abc\n
+97
+98
+99
+```
+
 # Tools
 
 ## cc
