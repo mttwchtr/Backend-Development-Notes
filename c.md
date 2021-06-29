@@ -4,6 +4,37 @@
 Comment
 > Any characters between /* and \*/ are ignored by the compiler; they may be used freely to make a program easier to understand. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
+## ++x
+Increments the variable x by 1. Equivalent to 
+```c
+x = x + 1;
+```
+
+## if
+> if statement tests the parenthesized condition, and if the condition is true, executes the statement (or group of statements in braces) that follows.  - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
+```c
+ #include <stdio.h>
+ /* count lines in input */
+ main()
+ {
+  int c;
+
+  printf("Enter a capital letter to see if it's the first.\n");
+  c = getchar();
+
+  if (c == 'A') {
+      printf("It is!\n");
+  } else {
+        printf("It is not!\n");
+  }
+ } 
+ 
+$ ./a.out
+>> Enter a capital letter to see if it's the first.
+>>A
+>> It is!
+```
+
 ## main
 > Normally you are at liberty to give functions whatever names you like, but 'main' is special - your program begins executing at the beginning of main. This means that every program must have a main somewhere.  - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
@@ -14,7 +45,7 @@ Comment
 > the newline character, which when printed advances the output to the left margin on the next line - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
 ## EOF
->  a distinctive value when there is no more input, a value that cannot be confused with any real character. This value is called EOF, for ``end of file''. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
+>  a distinctive value when there is no more input, a value that cannot be confused with any real character. This value is called EOF, for ``end of file''. EOF is an integer defined in <stdio.h>, but the specific numeric value doesn't matter as long as it is not the same as any char value- The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 > The value of EOF is always defined to be -1. That works well because all ASCII codes are positive, so it can't possibly clash with any real character's representation. - Stephen J. Murrell, http://rabbit.eng.miami.edu/class/een218/getchar.html
 
 ## \#define
@@ -53,10 +84,10 @@ main()
 } 
 
 $ ./a.out
-abc\n
-97
-98
-99
+>> abc\n
+>> 97
+>> 98
+>> 99
 ```
 
 # Tools
