@@ -13,6 +13,10 @@ Comment
 ## \n
 > the newline character, which when printed advances the output to the left margin on the next line - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
+## EOF
+>  a distinctive value when there is no more input, a value that cannot be confused with any real character. This value is called EOF, for ``end of file''. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
+> The value of EOF is always defined to be -1. That works well because all ASCII codes are positive, so it can't possibly clash with any real character's representation. - Stephen J. Murrell, http://rabbit.eng.miami.edu/class/een218/getchar.html
+
 ## \#define
 Symbolic Constant
 > A #define line defines a symbolic name or symbolic constant to be a particular string of characters  - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
