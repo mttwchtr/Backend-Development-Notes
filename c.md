@@ -35,16 +35,25 @@ $ ./a.out
 >> It is!
 ```
 
-##getchar
+## getchar()
 > getchar() has no parameters. Every time you call it, it reads the next character of input and returns it to you. The function returns an int, being the ASCII code of the relevant character, but you can assign the result to a char variable if you want. - http://rabbit.eng.miami.edu/class/een218/getchar.html
 
 > When you input something, it doesn't reach your C program until you press \n or send EOF (or EOL). - https://stackoverflow.com/questions/42223585/why-doesnt-getchar-read-characters-such-as-backspace
 
-##main
+## putchar(c)
+> prints the contents of the integer variable c as a character, usually on the screen. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
+
+## main
 > Normally you are at liberty to give functions whatever names you like, but 'main' is special - your program begins executing at the beginning of main. This means that every program must have a main somewhere.  - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
 ## stdio.h
 > the standard input/output library
+
+## !=
+not equal to
+
+## =
+equal to
 
 ## \n
 > the newline character, which when printed advances the output to the left margin on the next line - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
@@ -61,7 +70,7 @@ Symbolic Constant
 #define UPPER 1000
 ```
 
-##while
+## while
 > The condition in parentheses is tested. If it is true, the body of the loop is executed. Then the condition is re-tested, and if true, the body is executed again. When the test becomes false (fahr exceeds upper) the loop ends, and execution continues at the statement that follows the loop. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 ```c
 #include <stdio.h>
@@ -92,7 +101,7 @@ $ ./a.out
 >> 9
 ```
 
-##for
+## for
 > The for statement is a loop, a generalization of the while.  Within the parentheses, there are three parts, separated by semicolons. The first part, the initialization is done once, before the loop proper is entered. The second part is the test or condition that controls the loop. This condition is evaluated; if it is true, the body of the loop is executed. Then the increment step is executed, and the condition re-evaluated. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 ```c
 #include <stdio.h>
@@ -119,11 +128,11 @@ $ ./a.out
 >> 7
 >> 9
 ```
-##\
+## \
 escape sequence
 > An escape sequence like \n provides a general and extensible mechanism for representing hard-to-type or invisible characters. Among the others that C provides are \t for tab, \b for backspace. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
-##'' 
+## '' 
 character constant
 > A character surrounded by single quotes like 'a' is a character constant. A character constant is an integer whose value is the character code that stands for the character. - https://developerinsider.co/11-most-common-pitfalls-in-c-programming-language/
 
@@ -133,7 +142,7 @@ character string / string constant / string literal
 
 > A string literal is an unmodifiable array whose elements are type char. The string in the double quotes plus terminating null-character are the contents, so "abc" has 4 elements ({'a', 'b', 'c', '\0'}) - https://developerinsider.co/11-most-common-pitfalls-in-c-programming-language/
 
-##types
+## types
 * int - integer
 * float - floating point, may have fractional part
 * char character - a single byte
@@ -147,7 +156,24 @@ character string / string constant / string literal
 ## Program
 > A C program, whatever its size, consists of functions and variables. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
-##Text Stream
+## declaration
+> A declaration announces the properties of variables; it consists of a name and a list of variables, such as
+```c
+int fahr, celsius;
+int lower, upper, step;
+```
+ - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
+
+## assignment
+> set the variables to their initial values
+```c
+lower = 0;
+upper = 300;
+step = 20;
+```
+ - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
+
+## text stream
 > A text stream is a sequence of characters divided into lines; each line consists of zero or more characters followed by a newline character. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
 # Concepts
