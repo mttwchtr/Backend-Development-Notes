@@ -10,6 +10,10 @@ Increments the variable x by 1. Equivalent to
 x = x + 1;
 ```
 
+##printf
+print formatted
+>  printf is a general-purpose output formatting function. Its first argument is a string of characters to be printed, with each % indicating where one of the other (second, third, ...) arguments is to be substituted, and in what form it is to be printed. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
+
 ## if
 > if statement tests the parenthesized condition, and if the condition is true, executes the statement (or group of statements in braces) that follows.  - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 ```c
