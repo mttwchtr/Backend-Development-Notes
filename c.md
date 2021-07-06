@@ -185,6 +185,24 @@ step = 20;
 ## type arithmetic
 > integer division truncates: any fractional part is discarded. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
+> char subtraction 
+```c
+#include <stdio.h>
+
+int main() {
+    printf("C is %i\n", 'c');
+    printf("F is %i\n", 'f');
+    printf("F - C is %i", 'f' - 'c');
+    return 0;
+}
+
+$ ./a.out
+>> C is 99
+>> F is 102
+>> F - C is 3
+```
+  
+
 ## Signed vs. Unsigned
 > An int is signed by default, meaning it can represent both positive and negative values. An unsigned is an integer that can never be negative. If you take an unsigned 0 and subtract 1 from it, the result wraps around, leaving a very large number (2^32-1 with the typical 32-bit integer size). - http://soundsoftware.ac.uk/c-pitfall-unsigned.html
 
