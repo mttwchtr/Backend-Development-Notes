@@ -207,6 +207,9 @@ $ ./a.out
 > An int is signed by default, meaning it can represent both positive and negative values. An unsigned is an integer that can never be negative. If you take an unsigned 0 and subtract 1 from it, the result wraps around, leaving a very large number (2^32-1 with the typical 32-bit integer size). - http://soundsoftware.ac.uk/c-pitfall-unsigned.html
 
 ## ASCII
+See table here:
+https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html
+
 > In C programming, a character variable holds ASCII value (an integer number between 0 and 127) rather than that character itself. This integer value is the ASCII code of the character. For example, the ASCII value of 'A' is 65. What this means is that, if you assign 'A' to a character variable, 65 is stored in the variable rather than 'A' itself. - https://www.programiz.com/c-programming/examples/ASCII-value-character
 ```c
 #include <stdio.h>
