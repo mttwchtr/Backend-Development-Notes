@@ -182,6 +182,11 @@ step = 20;
 
 # Concepts
 
+##reserved words
+This is a list of words that cannot be used as custom variable names:
+> auto	else	long	switch break	enum	register	typedef case	extern	return	union char	float	short	unsigned const	for	signed	void continue	goto	sizeof	volatile default if	static	while do	int	struct	\_Packed double
+- https://www.ibm.com/docs/en/adfz/developer-for-zos/14.2.0?topic=programs-c-reserved-keywords
+
 ## type arithmetic
 > integer division truncates: any fractional part is discarded. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
