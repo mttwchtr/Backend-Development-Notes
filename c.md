@@ -164,6 +164,8 @@ character string / string constant / string literal
 > A string literal is an unmodifiable array whose elements are type char. The string in the double quotes plus terminating null-character are the contents, so "abc" has 4 elements ({'a', 'b', 'c', '\0'}) - https://developerinsider.co/11-most-common-pitfalls-in-c-programming-language/
 
 ## types
+> C provides a variety of data types. The fundamental types are characters, and integers and floating point numbers of several sizes. In addition, there is a hierarchy of derived data types created with pointers, arrays, structures and unions.  - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
+
 * int - integer
 * float - floating point, may have fractional part
 * char character - a single byte
@@ -198,7 +200,7 @@ step = 20;
 > A text stream is a sequence of characters divided into lines; each line consists of zero or more characters followed by a newline character. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
 
-##Expressions and Statements
+## Expressions and Statements
 > An expression represents a single data item--usually a number. The expression may consist of a single entity, such as a constant or variable, or it may consist of some combination of such entities, interconnected by one or more operators. Expressions can also represent logical conditions which are either true or false. However, in C, the conditions true and false are represented by the integer values 1 and 0, respectively. Several simple expressions are given below:
 ```c
 a + b
@@ -220,9 +222,12 @@ The designers of C realized that no harm was done if you were allowed to evaluat
 ...is a totally legit statement even though absolutely nothing will happen. 
 - Code and Text from https://stackoverflow.com/questions/19132/expression-versus-statement
 
+>  Expressions are formed from operators and operands; any expression, including an assignment or a function call, can be a statement.  - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
+
+
 # Concepts
 
-##reserved words
+## reserved words
 This is a list of words that cannot be used as custom variable names:
 > auto	else	long	switch break	enum	register	typedef case	extern	return	union char	float	short	unsigned const	for	signed	void continue	goto	sizeof	volatile default if	static	while do	int	struct	\_Packed double
 - https://www.ibm.com/docs/en/adfz/developer-for-zos/14.2.0?topic=programs-c-reserved-keywords
