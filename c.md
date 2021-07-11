@@ -44,6 +44,13 @@ $ ./a.out
 
 > When you input something, it doesn't reach your C program until you press \n or send EOF (or EOL). - https://stackoverflow.com/questions/42223585/why-doesnt-getchar-read-characters-such-as-backspace
 
+##1 and 0
+true and false
+> However, in C, the conditions true and false are represented by the integer values 1 and 0, respectively. - http://farside.ph.utexas.edu/teaching/329/lectures/node11.html
+
+##;
+> ...a statement can even be split over many lines, so long as its end is signaled by a semicolon. - http://farside.ph.utexas.edu/teaching/329/lectures/node11.html
+
 ## putchar(c)
 > prints the contents of the integer variable c as a character, usually on the screen. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
@@ -73,6 +80,16 @@ Symbolic Constant
 #define LOWER 1
 #define UPPER 1000
 ```
+
+> A symbolic constant is a name that substitutes for a sequence of characters. The characters may represent either a number or a string. When a program is compiled, each occurrence of a symbolic constant is replaced by its corresponding character sequence. Symbolic constants are usually defined at the beginning of a program, by writing
+   #define  NAME  text
+where NAME represents a symbolic name, typically written in upper-case letters, and text represents the sequence of characters that is associated with that name. Note that text does not end with a semicolon, since a symbolic constant definition is not a true C statement. In fact, during compilation, the resolution of symbolic names is performed (by the C preprocessor) before the start of true compilation. For instance, suppose that a C program contains the following symbolic constant definition:
+#define  PI  3.141593
+Suppose, further, that the program contains the statement
+area = PI * radius * radius;
+During the compilation process, the preprocessor replaces each occurrence of the symbolic constant PI by its corresponding text. Hence, the above statement becomes
+area = 3.141593 * radius * radius;
+- http://farside.ph.utexas.edu/teaching/329/lectures/node11.html
 
 ## while
 > The condition in parentheses is tested. If it is true, the body of the loop is executed. Then the condition is re-tested, and if true, the body is executed again. When the test becomes false (fahr exceeds upper) the loop ends, and execution continues at the statement that follows the loop. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
@@ -179,6 +196,29 @@ step = 20;
 
 ## text stream
 > A text stream is a sequence of characters divided into lines; each line consists of zero or more characters followed by a newline character. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
+
+
+##Expressions and Statements
+> An expression represents a single data item--usually a number. The expression may consist of a single entity, such as a constant or variable, or it may consist of some combination of such entities, interconnected by one or more operators. Expressions can also represent logical conditions which are either true or false. However, in C, the conditions true and false are represented by the integer values 1 and 0, respectively. Several simple expressions are given below:
+```c
+a + b
+x = y
+t = u + v
+x <= y
+++j
+```
+- Text and Code from http://farside.ph.utexas.edu/teaching/329/lectures/node11.html 
+
+> A statement causes the computer to carry out some definite action. There are three different classes of statements in C: expression statements, compound statements, and control statements. An expression statement consists of an expression followed by a semicolon. The execution of such a statement causes the associated expression to be evaluated. A compound statement consists of several individual statements enclosed within a pair of braces { }. - http://farside.ph.utexas.edu/teaching/329/lectures/node11.html 
+
+> Expression: Something which evaluates to a value. Example: 1+2/x
+Statement: A line of code which does something. Example: GOTO 100
+The designers of C realized that no harm was done if you were allowed to evaluate an expression and throw away the result. In C, every syntactic expression can be a made into a statement just by tacking a semicolon along the end:
+```c
+1 + 2 / x;
+```
+...is a totally legit statement even though absolutely nothing will happen. 
+- Code and Text from https://stackoverflow.com/questions/19132/expression-versus-statement
 
 # Concepts
 
