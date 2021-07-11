@@ -163,6 +163,8 @@ character string / string constant / string literal
 
 > A string literal is an unmodifiable array whose elements are type char. The string in the double quotes plus terminating null-character are the contents, so "abc" has 4 elements ({'a', 'b', 'c', '\0'}) - https://developerinsider.co/11-most-common-pitfalls-in-c-programming-language/
 
+# Definitions
+
 ## types
 > C provides a variety of data types. The fundamental types are characters, and integers and floating point numbers of several sizes. In addition, there is a hierarchy of derived data types created with pointers, arrays, structures and unions.  - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
@@ -174,9 +176,7 @@ character string / string constant / string literal
 * double double-precision floating point
 - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
-# Definitions
-
-## Program
+## program
 > A C program, whatever its size, consists of functions and variables. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
 ## declaration
@@ -200,7 +200,9 @@ step = 20;
 > A text stream is a sequence of characters divided into lines; each line consists of zero or more characters followed by a newline character. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
 
-## Expressions and Statements
+## expressions and statements
+
+### expression
 > An expression represents a single data item--usually a number. The expression may consist of a single entity, such as a constant or variable, or it may consist of some combination of such entities, interconnected by one or more operators. Expressions can also represent logical conditions which are either true or false. However, in C, the conditions true and false are represented by the integer values 1 and 0, respectively. Several simple expressions are given below:
 ```c
 a + b
@@ -211,10 +213,7 @@ x <= y
 ```
 - Text and Code from http://farside.ph.utexas.edu/teaching/329/lectures/node11.html 
 
-> A statement causes the computer to carry out some definite action. There are three different classes of statements in C: expression statements, compound statements, and control statements. An expression statement consists of an expression followed by a semicolon. The execution of such a statement causes the associated expression to be evaluated. A compound statement consists of several individual statements enclosed within a pair of braces { }. - http://farside.ph.utexas.edu/teaching/329/lectures/node11.html 
-
 > Expression: Something which evaluates to a value. Example: 1+2/x
-Statement: A line of code which does something. Example: GOTO 100
 The designers of C realized that no harm was done if you were allowed to evaluate an expression and throw away the result. In C, every syntactic expression can be a made into a statement just by tacking a semicolon along the end:
 ```c
 1 + 2 / x;
@@ -224,8 +223,17 @@ The designers of C realized that no harm was done if you were allowed to evaluat
 
 >  Expressions are formed from operators and operands; any expression, including an assignment or a function call, can be a statement.  - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
+### statement
+> A statement causes the computer to carry out some definite action. There are three different classes of statements in C: expression statements, compound statements, and control statements. An expression statement consists of an expression followed by a semicolon. The execution of such a statement causes the associated expression to be evaluated. A compound statement consists of several individual statements enclosed within a pair of braces { }. - http://farside.ph.utexas.edu/teaching/329/lectures/node11.html 
+
+> Statement: A line of code which does something. Example: GOTO 100
+- Code and Text from https://stackoverflow.com/questions/19132/expression-versus-statement
 
 # Concepts
+
+## control-flow contructions
+
+> C provides the fundamental control-flow constructions required for well-structured programs: statement grouping, decision making (if-else), selecting one of a set of possible values (switch), looping with the termination test at the top (while, for) or at the bottom (do), and early loop exit (break). - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
 ## reserved words
 This is a list of words that cannot be used as custom variable names:
