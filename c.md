@@ -165,6 +165,11 @@ character string / string constant / string literal
 
 # Definitions
 
+## function prototype
+
+> A function prototype is simply the declaration of a function that specifies function's name, parameters and return type. It doesn't contain function body. A function prototype gives information to the compiler that the function may later be used in the program. - https://www.programiz.com/c-programming/c-user-defined-functions
+
+
 ## types
 > C provides a variety of data types. The fundamental types are characters, and integers and floating point numbers of several sizes. In addition, there is a hierarchy of derived data types created with pointers, arrays, structures and unions.  - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
@@ -295,6 +300,33 @@ $ ./a.out
 ```c
 $ cc fahr.c -o fahr.out
 $ ./fahr.out
+```
+
+# Compiling Errors
+
+## implicit declaration of function 'factorial' is invalid in C99
+
+This comes from using a custom function without declaring a function prototype.
+In the following example, factiorial is used without a prototype being declared.
+```c
+#include <stdio.h>
+
+#define UPPER 20
+
+int main(void) {
+   int i;
+   for (i = 1; i <= UPPER; ++i) {
+       printf("%i | %i\n", i, factorial(i));
+   }
+}
+
+int factorial(int n) {
+    if (n == 1) {
+        return n;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
 ```
 
 # Programs
