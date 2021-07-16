@@ -182,7 +182,6 @@ character string / string constant / string literal
 ## function prototype
 > A function prototype is simply the declaration of a function that specifies function's name, parameters and return type. It doesn't contain function body. A function prototype gives information to the compiler that the function may later be used in the program. - https://www.programiz.com/c-programming/c-user-defined-functions
 
-
 ## parameter
 > ...a variable named in the parenthesized list in a function. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
@@ -261,6 +260,9 @@ The designers of C realized that no harm was done if you were allowed to evaluat
 - Code and Text from https://stackoverflow.com/questions/19132/expression-versus-statement
 
 # Concepts
+
+## call by value
+>  all function arguments are passed 'by value.' This means that the called function is given the values of its arguments in temporary variables rather than the originals. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
 ## control-flow contructions
 > C provides the fundamental control-flow constructions required for well-structured programs: statement grouping, decision making (if-else), selecting one of a set of possible values (switch), looping with the termination test at the top (while, for) or at the bottom (do), and early loop exit (break). - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
