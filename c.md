@@ -10,7 +10,21 @@ Increments the variable x by 1. Equivalent to
 x = x + 1;
 ```
 
-##printf
+## extern
+> An external variable must be defined, exactly once, outside of any function; this sets aside storage for it. The variable must also be declared in each function that wants to access it; this states the type of the variable. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
+```c
+#include <stdio.h>
+
+char longest[MAXLINE]; 
+
+main()  {
+ int len;
+ extern char longest[];
+ /* code continues from here... */
+} 
+```
+
+## printf
 print formatted
 >  printf is a general-purpose output formatting function. Its first argument is a string of characters to be printed, with each % indicating where one of the other (second, third, ...) arguments is to be substituted, and in what form it is to be printed. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
@@ -166,9 +180,14 @@ character string / string constant / string literal
 # Definitions
 
 ## function prototype
-
 > A function prototype is simply the declaration of a function that specifies function's name, parameters and return type. It doesn't contain function body. A function prototype gives information to the compiler that the function may later be used in the program. - https://www.programiz.com/c-programming/c-user-defined-functions
 
+
+## parameter
+> ...a variable named in the parenthesized list in a function. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
+
+## automatic variables
+> Each local variable in a function comes into existence only when the function is called, and disappears when the function is exited. This is why such variables are usually known as automatic variables, following terminology in other languages. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
 ## types
 > C provides a variety of data types. The fundamental types are characters, and integers and floating point numbers of several sizes. In addition, there is a hierarchy of derived data types created with pointers, arrays, structures and unions.  - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
@@ -200,6 +219,13 @@ upper = 300;
 step = 20;
 ```
  - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
+
+### evaluates to the left operand
+> An assignment expression has the value of the left operand after the assignment... - Derek M. Jones, The New C Standard, http://www.coding-guidelines.com/cbook/cbook1_2.pdf
+
+### 
+> The syntax is written so that these operators associate to the right. This means that in x = y = z, z is assigned to 955 associativity
+operator y, which is then assigned to x. - Derek M. Jones, The New C Standard, http://www.coding-guidelines.com/cbook/cbook1_2.pdf
 
 ## text stream
 > A text stream is a sequence of characters divided into lines; each line consists of zero or more characters followed by a newline character. - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
@@ -237,7 +263,6 @@ The designers of C realized that no harm was done if you were allowed to evaluat
 # Concepts
 
 ## control-flow contructions
-
 > C provides the fundamental control-flow constructions required for well-structured programs: statement grouping, decision making (if-else), selecting one of a set of possible values (switch), looping with the termination test at the top (while, for) or at the bottom (do), and early loop exit (break). - The C Programming Language 2nd Edition, Brian Kernighan and Dennis Ritchie
 
 ## reserved words
